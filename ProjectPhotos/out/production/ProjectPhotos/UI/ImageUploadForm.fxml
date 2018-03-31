@@ -8,7 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="439.0" prefWidth="674.0" style="-fx-background-color: #021323;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ImageUploadController">
+<AnchorPane prefHeight="485.0" prefWidth="709.0" style="-fx-background-color: #021323;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ImageUploadController">
    <children>
       <Button layoutX="26.0" layoutY="23.0" mnemonicParsing="false" onAction="#selectImage" prefHeight="25.0" prefWidth="133.0" text="Select image..." />
       <ImageView fx:id="imageViewer" fitHeight="401.0" fitWidth="456.0" layoutX="187.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
@@ -16,7 +16,7 @@
       <Button fx:id="btn_newFolder" disable="true" layoutX="26.0" layoutY="132.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="New folder" />
     <TitledPane fx:id="btn_selectFolder" animated="false" disable="true" layoutX="26.0" layoutY="165.0" prefHeight="26.0" prefWidth="133.0" text="Select folder" />
       <TextField fx:id="tBox_tagImg" disable="true" layoutX="26.0" layoutY="82.0" prefHeight="26.0" prefWidth="133.0" promptText="Tag image..." />
-      <Button fx:id="btn_upload" disable="true" layoutX="26.0" layoutY="386.0" mnemonicParsing="false" onAction="#imageUpload" prefHeight="25.0" prefWidth="133.0" text="Upload" />
-      <Label fx:id="lbl_location" layoutX="79.0" layoutY="220.0" />
+      <Button fx:id="btn_upload" disable="true" layoutX="26.0" layoutY="446.0" mnemonicParsing="false" onAction="#imageUpload" prefHeight="25.0" prefWidth="133.0" text="Upload" />
+      <Label fx:id="lbl_metadata" layoutX="26.0" layoutY="277.0" style="-fx-text-fill: #ffffff;" />
    </children>
 </AnchorPane>

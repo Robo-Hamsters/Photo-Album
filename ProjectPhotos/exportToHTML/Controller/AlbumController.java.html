@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>AlbumController.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(106,135,89); }
+.s3 { color: rgb(128,128,128); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+AlbumController.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">Controller</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">javafx.event.ActionEvent</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.fxml.FXML</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.fxml.FXMLLoader</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.scene.Parent</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.scene.Scene</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.stage.Stage</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">java.io.IOException</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">public class </span><span class="s1">AlbumController { 
+ 
+    @FXML 
+    </span><span class="s0">public void </span><span class="s1">openImageUploadForm(ActionEvent event) </span><span class="s0">throws </span><span class="s1">IOException 
+    { 
+        FXMLLoader loader=</span><span class="s0">new </span><span class="s1">FXMLLoader()</span><span class="s0">;</span><span class="s1"> 
+        loader.setLocation(getClass().getResource(</span><span class="s2">&quot;../UI/ImageUploadForm.fxml&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+        Parent imageUploadOpen=loader.load()</span><span class="s0">;</span><span class="s1"> 
+        Stage stage = </span><span class="s0">new </span><span class="s1">Stage()</span><span class="s0">;</span><span class="s1"> 
+        stage.setTitle(</span><span class="s2">&quot;Upload Image&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        stage.setScene(</span><span class="s0">new </span><span class="s1">Scene(imageUploadOpen))</span><span class="s0">;</span><span class="s1"> 
+        stage.show()</span><span class="s0">;</span><span class="s1"> 
+ 
+        ImageUploadController controller=loader.getController()</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+       </span><span class="s3">/* Stage window=(Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(AlbumScene); 
+        window.show(); */</span><span class="s1"> 
+    } 
+     
+} 
+</span></pre>
+</body>
+</html>

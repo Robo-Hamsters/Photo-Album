@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<style>html,body{height:100%;margin:0;padding:0;}#map_canvas{height:100%;}</style>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+function initialise() {
+    var options = { zoom:13, mapTypeId:google.maps.MapTypeId.ROADMAP, center:new google.maps.LatLng(40.777949,22.5753938)};
+    var map = new google.maps.Map(document.getElementById('map_canvas'), options);
+    var marker;
+	marker = new google.maps.Marker({
+		position:new google.maps.LatLng(40.777949,22.5753938), map:map, title:""});
+		google.maps.event.addListener(marker, 'click', function() { document.location = ""; });
+}
+</script>
+</head>
+<body onload="initialise()">
+<div id="map_canvas"></div>
+</body>
+</html>
