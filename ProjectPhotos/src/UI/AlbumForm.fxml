@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="labelUserName" prefHeight="476.0" prefWidth="674.0" style="-fx-background-color: #021323;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AlbumController">
+<AnchorPane prefHeight="476.0" prefWidth="674.0" style="-fx-background-color: #021323;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AlbumController">
    <children>
       <Button fx:id="btn_upload" layoutX="614.0" layoutY="14.0" mnemonicParsing="false" onAction="#openImageUploadForm" prefHeight="44.0" prefWidth="46.0" style="-fx-background-radius: 50px;" text="+">
          <font>
@@ -36,6 +36,6 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Label layoutX="65.0" layoutY="20.0" text="Label" />
+      <Label fx:id="labelUsername" layoutX="65.0" layoutY="20.0" text="Label" />
    </children>
 </AnchorPane>

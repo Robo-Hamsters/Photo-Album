@@ -22,7 +22,7 @@ public class AlbumController {
     private ImageView imageViewer;
 
     @FXML
-    private Label labelUserName;
+    private Label labelUsername;
 
     public void loadImageView(){
         DBConnector con= new DBConnector();
