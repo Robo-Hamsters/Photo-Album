@@ -28,7 +28,8 @@ public class SignupController {
     @FXML
     public void createAccount(ActionEvent event)
     {
-        if(textConPassword.getText().equals(textPassword.getText()))
+
+        if(checkValidation(textName, textEmail, textPassword, textConPassword))
         {
             User user=new User();
             user.setName(textName.getText());
@@ -51,14 +52,24 @@ public class SignupController {
         else
         {
             Alert alert=new Alert(Alert.AlertType.WARNING);
-            alert.setContentText("Passwords don't match!");
+            alert.setContentText("Check your Information");
             alert.setTitle("Tuxedo View");
             alert.showAndWait();
         }
-
-
-
-
     }
+
+    private boolean checkValidation(TextField textName, TextField textEmail, TextField textPassword, TextField textConPassword){
+        boolean allClear = true;
+        SignUpService service = new SignUpService();
+        if(service.chechIfUserNameIsNull(textName)) allClear = false;
+        if(service.chechIfPasswordIsNull(textPassword)) allClear = false;
+        if(!service.checkIfPasswordIsStrong(textPassword)) allClear = false;
+        if(!service.checkIfPasswordsMatch(textPassword,textConPassword)) allClear = false;
+        if(!service.checkIfEmailIsValid(textEmail)) allClear = false;
+
+
+        return allClear;
+    }
+
 
 }
