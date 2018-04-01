@@ -16,6 +16,8 @@ import java.util.UUID;
 
 public class SignupController {
 
+    private String message="";
+
     @FXML
     private TextField textName;
     @FXML
@@ -28,7 +30,6 @@ public class SignupController {
     @FXML
     public void createAccount(ActionEvent event)
     {
-
         if(checkValidation(textName, textEmail, textPassword, textConPassword))
         {
             User user=new User();
@@ -51,24 +52,47 @@ public class SignupController {
         }
         else
         {
+            String messageBox= checkWarningStatus("");
             Alert alert=new Alert(Alert.AlertType.WARNING);
-            alert.setContentText("Check your Information");
+            alert.setContentText(messageBox);
             alert.setTitle("Tuxedo View");
             alert.showAndWait();
+            message = "";
         }
     }
 
     private boolean checkValidation(TextField textName, TextField textEmail, TextField textPassword, TextField textConPassword){
         boolean allClear = true;
-        SignUpService service = new SignUpService();
-        if(service.chechIfUserNameIsNull(textName)) allClear = false;
-        if(service.chechIfPasswordIsNull(textPassword)) allClear = false;
-        if(!service.checkIfPasswordIsStrong(textPassword)) allClear = false;
-        if(!service.checkIfPasswordsMatch(textPassword,textConPassword)) allClear = false;
-        if(!service.checkIfEmailIsValid(textEmail)) allClear = false;
 
+        SignUpService service = new SignUpService();
+
+        if(service.chechIfUserNameIsNull(textName)){
+            allClear = false;
+            checkWarningStatus("Name is Null");
+        }
+        if(service.chechIfPasswordIsNull(textPassword)) {
+            allClear = false;
+            checkWarningStatus("Password is Null");
+        }
+        if(!service.checkIfPasswordIsStrong(textPassword)){
+            allClear = false;
+            checkWarningStatus("Password is Weak");
+        }
+        if(!service.checkIfPasswordsMatch(textPassword,textConPassword)) {
+            allClear = false;
+            checkWarningStatus("Passwords does not match");
+        }
+        if(!service.checkIfEmailIsValid(textEmail)){
+            allClear = false;
+            checkWarningStatus("Email is not valid");
+        }
 
         return allClear;
+    }
+
+    private String checkWarningStatus(String code){
+        message+=code+"\n";
+        return  message;
     }
 
 
