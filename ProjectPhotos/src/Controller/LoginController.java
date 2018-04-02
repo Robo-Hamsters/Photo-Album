@@ -25,6 +25,7 @@ public class LoginController {
     @FXML
     private TextField textLoginPswd;
 
+
     public void signIn(ActionEvent event) throws IOException
     {
         FXMLLoader loader=new FXMLLoader();
@@ -62,6 +63,17 @@ public class LoginController {
         Stage stage = new Stage();
         stage.setTitle("Create new Account");
         stage.setScene(new Scene(signupOpen));
+        stage.showAndWait();
+    }
+
+    public void forgotPass(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../UI/ForgotPassForm.fxml"));
+        Parent forgotPassLoader = loader.load();
+
+        Stage stage = new Stage();
+        stage.setTitle("Forgot Password");
+        stage.setScene(new Scene(forgotPassLoader));
         stage.showAndWait();
     }
 
