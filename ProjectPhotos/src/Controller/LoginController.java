@@ -12,10 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
-import static Controller.LoginService.loginUser;
 
 
 public class LoginController {
@@ -25,6 +23,7 @@ public class LoginController {
     @FXML
     private TextField textLoginPswd;
 
+    private static User user;
 
     public void signIn(ActionEvent event) throws IOException
     {
@@ -34,14 +33,18 @@ public class LoginController {
         Scene AlbumScene=new Scene(albumOpen);
         AlbumController controller=loader.getController();
 
+
         User user=new User();
         user.setEmail(textLoginEmail.getText());
         user.setPassword(EncryptService.encryptPassword(textLoginPswd.getText()));
 
+        LoginService login = new LoginService();
 
-        if(loginUser(user)) {
+
+        if(login.loginUser(user)) {
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(AlbumScene);
+            controller.setLabelTextUsername(login.getReturnedUser().getName());
             window.show();
         }
         else
@@ -66,10 +69,11 @@ public class LoginController {
         stage.showAndWait();
     }
 
-    public void forgotPass(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader();
+    public void forgotPass(ActionEvent event) throws IOException
+    {
+        FXMLLoader loader=new FXMLLoader();
         loader.setLocation(getClass().getResource("../UI/ForgotPassForm.fxml"));
-        Parent forgotPassLoader = loader.load();
+        Parent forgotPassLoader=loader.load();
 
         Stage stage = new Stage();
         stage.setTitle("Forgot Password");

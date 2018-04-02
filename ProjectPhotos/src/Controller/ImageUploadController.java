@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.FileManager;
+import Model.User;
 import Repo.DBConnector;
 import Repo.LocationParser;
 import Model.Photo;
@@ -16,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.UUID;
 
 
 public class ImageUploadController {
@@ -35,7 +37,15 @@ public class ImageUploadController {
 
     private Photo photo;
 
+    private  User user;
+
     private FileManager image;
+
+/*    public User setUser() {
+        LoginService loginUser = new LoginService();
+        user = loginUser.getReturnedUser();
+        return user;
+    }*/
 
     @FXML
     private void selectImage(ActionEvent event) {
@@ -86,6 +96,10 @@ public class ImageUploadController {
 
     @FXML
     private void imageUpload(ActionEvent event) throws IOException {
+
+        User user = new User();
+        user.setUserid(UUID.fromString("25dd9d31-4d29-4b10-bff8-128d5cb729a6"));
+        photo.setUser(user);
 
         image.saveFile(photo);
 

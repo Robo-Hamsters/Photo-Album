@@ -1,6 +1,8 @@
 package Controller;
 
 import Model.Photo;
+import Model.User;
+import Patterns.SigletonPattern;
 import Repo.DBConnector;
 import Repo.PhotoRepo;
 import javafx.event.ActionEvent;
@@ -8,9 +10,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
 import java.io.ByteArrayInputStream;
@@ -24,17 +28,31 @@ public class AlbumController {
     @FXML
     private Label labelUsername;
 
+    @FXML
+    private TilePane tilePane;
+
+    @FXML
+    private ComboBox comboBox;
+
+
     public void loadImageView(){
+
+
         DBConnector con= new DBConnector();
         con.databaseConnect();
         con.setSession(con.getFactory().getCurrentSession()) ;
-
         con.getSession().beginTransaction();
+
         PhotoRepo photoRepo=new PhotoRepo();
         Photo photo = photoRepo.dbSelectPhoto(photoRepo,con);
         Image img = new Image(new ByteArrayInputStream(photo.getImage()));
         imageViewer.setImage(img);
         con.databaseDisconnect();
+
+
+        //Image img = new Image(new ByteArrayInputStream(photo.getImage()));
+        //imageViewer.setImage(img);
+
     }
     @FXML
     public void openImageUploadForm(ActionEvent event) throws IOException
@@ -50,9 +68,12 @@ public class AlbumController {
 
         loadImageView();
 
-       /* Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(AlbumScene);
-        window.show(); */
     }
-    
+    public Label getLabelUsername() {
+        return labelUsername;
+    }
+
+    public void setLabelTextUsername(String Username) {
+        this.labelUsername.setText("Welocme "+Username+"!");
+    }
 }
