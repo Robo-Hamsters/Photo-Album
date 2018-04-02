@@ -40,6 +40,10 @@ public class Photo {
     @Column (name="Image")
     private byte[] image;
 
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="userid",referencedColumnName = "userid")
+    User user;
+
 
     public void setIdPhoto(UUID idPhoto) { this.idPhoto = idPhoto; }
     public void setCountry(String country) { this.country = country; }
@@ -157,4 +161,7 @@ public class Photo {
     public Photo(String namePhoto) {
         this.namePhoto = namePhoto;
     }
+    public User getUser() { return user; }
+
+    public void setUser(User user) { this.user = user; }
 }

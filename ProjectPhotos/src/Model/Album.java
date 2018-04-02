@@ -4,6 +4,12 @@ public class Album {
     private String albumsDirectory="";
     private String albumName="";
 
+
+
+
+
+
+
     public String getAlbumsDirectory() {
         return albumsDirectory;
     }

@@ -1,5 +1,6 @@
 package Model;
 
+import Controller.LoginService;
 import Repo.DBConnector;
 import Repo.PhotoRepo;
 import javafx.stage.FileChooser;

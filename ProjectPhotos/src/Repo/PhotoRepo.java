@@ -18,7 +18,6 @@ public class PhotoRepo {
     public Photo findByName(Photo photo,DBConnector con)
     {
 
-
         Query query= con.getSession().createQuery("SELECT image from Photo ");
         //TODO CONNECT KEYS AT DATABASE TO WRITE THE RIGHT QUERY
         return new Photo();
