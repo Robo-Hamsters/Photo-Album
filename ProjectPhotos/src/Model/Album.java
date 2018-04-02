@@ -1,22 +1,29 @@
 package Model;
 
+import javax.persistence.*;
+import java.util.UUID;
+
+@Entity
+@Table (name="Albums")
 public class Album {
-    private String albumsDirectory="";
+    @Id
+    @Column (name="albumID")
+    private UUID  albumId;
+
+    @Column (name = "albumName")
     private String albumName="";
 
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="idPhoto",referencedColumnName = "idPhoto")
+     Photo photo;
 
 
 
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="userid",referencedColumnName = "userid")
+     User user;
 
 
-
-    public String getAlbumsDirectory() {
-        return albumsDirectory;
-    }
-
-    public void setAlbumsDirectory(String albumsDirectory) {
-        this.albumsDirectory = albumsDirectory;
-    }
 
     public String getAlbumName() {
         return albumName;
@@ -25,4 +32,5 @@ public class Album {
     public void setAlbumName(String albumName) {
         this.albumName = albumName;
     }
+
 }

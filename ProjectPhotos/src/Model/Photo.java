@@ -19,7 +19,7 @@ import java.util.UUID;
 public class Photo {
 
     @Id
-    @Column(name="Id")
+    @Column(name="idPhoto")
     private UUID idPhoto;
     @Column (name="name")
     private String  namePhoto="";
