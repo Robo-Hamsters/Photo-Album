@@ -4,16 +4,21 @@ import Model.User;
 import Repo.DBConnector;
 import Repo.UserRepo;
 
+import java.util.UUID;
+
 public class LoginService {
 
-    public static boolean loginUser(User user)
+
+    private   User returnedUser;
+
+    public  boolean loginUser(User user)
     {
         DBConnector con=new DBConnector();
         con.databaseConnect();
         con.setSession(con.getFactory().getCurrentSession()) ;
         con.getSession().beginTransaction();
 
-        User returnedUser = null;
+
         UserRepo userRepo=new UserRepo();
         returnedUser = userRepo.findUserByUsernameAndPassword(user,con);
 
@@ -21,5 +26,8 @@ public class LoginService {
 
     }
 
-
+    public  User getReturnedUser()
+    {
+        return returnedUser;
+    }
 }
