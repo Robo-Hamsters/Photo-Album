@@ -44,6 +44,9 @@ public class Photo {
     @JoinColumn(name="userid",referencedColumnName = "userid")
     User user;
 
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="albumID",referencedColumnName = "albumID")
+    Album album;
 
     public void setIdPhoto(UUID idPhoto) { this.idPhoto = idPhoto; }
     public void setCountry(String country) { this.country = country; }

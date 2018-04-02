@@ -31,9 +31,6 @@ public class AlbumController {
     @FXML
     private TilePane tilePane;
 
-    @FXML
-    private ComboBox comboBox;
-
 
     public void loadImageView(){
 
@@ -69,6 +66,20 @@ public class AlbumController {
         loadImageView();
 
     }
+
+    public void createNewAlbum(ActionEvent event) throws IOException
+    {
+
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(getClass().getResource("../UI/NewAlbumForm.fxml"));
+        Parent newAlbum=loader.load();
+        NewAlbumController controller=loader.getController();
+        Stage stage = new Stage();
+        stage.setTitle("Create album");
+        stage.setScene(new Scene(newAlbum));
+        stage.showAndWait();
+    }
+
     public Label getLabelUsername() {
         return labelUsername;
     }

@@ -8,22 +8,30 @@ import java.util.UUID;
 public class Album {
     @Id
     @Column (name="albumID")
-    private UUID  albumId;
+    private UUID  albumID;
 
     @Column (name = "albumName")
-    private String albumName="";
-
-    @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="idPhoto",referencedColumnName = "idPhoto")
-     Photo photo;
-
-
+    private String albumName;
 
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="userid",referencedColumnName = "userid")
      User user;
 
+    public UUID getAlbumID() {
+        return albumID;
+    }
 
+    public void setAlbumID(UUID albumID) {
+        this.albumID = albumID;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public String getAlbumName() {
         return albumName;
