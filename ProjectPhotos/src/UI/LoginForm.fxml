@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -47,5 +48,6 @@
             <Font name="Gentium Basic" size="18.0" />
          </font>
       </Label>
+      <ProgressIndicator fx:id="progressIndicator" layoutX="146.0" layoutY="256.0" prefHeight="49.0" prefWidth="77.0" visible="false" />
    </children>
 </AnchorPane>
