@@ -1,22 +1,24 @@
 package Controller;
 
+import Model.Album;
 import Model.FileManager;
 import Model.User;
+import Repo.AlbumRepo;
 import Repo.DBConnector;
 import Repo.LocationParser;
 import Model.Photo;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -34,6 +36,8 @@ public class ImageUploadController {
     private Button btn_upload;
     @FXML
     private Label lbl_metadata;
+    @FXML
+    private ComboBox<String> albumNames;
 
     private Photo photo;
 
@@ -86,6 +90,7 @@ public class ImageUploadController {
                 metadata += "\nModel: No model found!";
 
             lbl_metadata.setText(metadata);
+            albumNames.setItems(FXCollections.observableArrayList(fillComboBox()));
         }
     }
 
@@ -100,6 +105,17 @@ public class ImageUploadController {
         Stage stage = (Stage)source.getScene().getWindow();
         stage.close();
 
+    }
+
+    private List fillComboBox()
+    {
+        DBConnector con = new DBConnector();
+        con.databaseConnect();
+        AlbumRepo albumRepo = new AlbumRepo();
+        List<String> listAlbum = new ArrayList<>();
+        listAlbum=albumRepo.dbSelectAlbum(con,user);
+        System.out.println(listAlbum);
+        return listAlbum;
     }
 
     public void setUser(User user) { this.user = user; }

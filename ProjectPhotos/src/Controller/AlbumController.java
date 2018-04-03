@@ -28,9 +28,6 @@ public class AlbumController {
     @FXML
     private Label labelUsername;
 
-    @FXML
-    private TilePane tilePane;
-
     private User user;
 
 
@@ -47,10 +44,6 @@ public class AlbumController {
         Image img = new Image(new ByteArrayInputStream(photo.getImage()));
         imageViewer.setImage(img);
         con.databaseDisconnect();
-
-
-        //Image img = new Image(new ByteArrayInputStream(photo.getImage()));
-        //imageViewer.setImage(img);
 
     }
     @FXML
@@ -81,6 +74,8 @@ public class AlbumController {
         Stage stage = new Stage();
         stage.setTitle("Create album");
         stage.setScene(new Scene(newAlbum));
+        controller.setUser(user);
+        loader.setController(controller);
         stage.showAndWait();
     }
 

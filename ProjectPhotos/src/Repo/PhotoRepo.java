@@ -25,7 +25,9 @@ public class PhotoRepo {
     public Photo dbSelectPhoto(PhotoRepo photo,DBConnector con)
     {
 
-        Query query=con.getSession().createQuery("SELECT image from Photo ");
+        Query query=con.getSession().createQuery("SELECT image from Photo where :frmuserid=user.userid");
+
+        query.setParameter("frmuserid",photo);
 
         List list=query.list();
         Photo returnPhoto=null;

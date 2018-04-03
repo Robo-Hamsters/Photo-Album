@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Album;
+import Model.User;
 import Repo.AlbumRepo;
 import Repo.DBConnector;
 import javafx.fxml.FXML;
@@ -13,6 +14,8 @@ public class NewAlbumController {
     @FXML
     private TextField textAlbumName;
 
+    private User user;
+
     @FXML
     void createAlbum()
     {
@@ -22,8 +25,12 @@ public class NewAlbumController {
         Album album = new Album();
         album.setAlbumID(UUID.randomUUID());
         album.setAlbumName(textAlbumName.getText());
+        album.setUser(user);
 
         albumRepo.dbInsertAlbum(album,con);
 
     }
+    public User getUser() { return user; }
+
+    public void setUser(User user) { this.user = user; }
 }

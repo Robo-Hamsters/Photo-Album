@@ -28,10 +28,7 @@ public class User {
     @Column (name="Password")
     private String password;
 
-    public User()
-    {
-
-    }
+    public User() { }
 
     public User(UUID userid, String email, String password) {
         this.userid = userid;
