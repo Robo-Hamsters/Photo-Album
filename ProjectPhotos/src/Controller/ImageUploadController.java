@@ -41,11 +41,6 @@ public class ImageUploadController {
 
     private FileManager image;
 
-/*    public User setUser() {
-        LoginService loginUser = new LoginService();
-        user = loginUser.getReturnedUser();
-        return user;
-    }*/
 
     @FXML
     private void selectImage(ActionEvent event) {
@@ -97,8 +92,6 @@ public class ImageUploadController {
     @FXML
     private void imageUpload(ActionEvent event) throws IOException {
 
-        User user = new User();
-        user.setUserid(UUID.fromString("25dd9d31-4d29-4b10-bff8-128d5cb729a6"));
         photo.setUser(user);
 
         image.saveFile(photo);
@@ -108,4 +101,6 @@ public class ImageUploadController {
         stage.close();
 
     }
+
+    public void setUser(User user) { this.user = user; }
 }

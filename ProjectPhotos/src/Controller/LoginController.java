@@ -38,6 +38,7 @@ public class LoginController {
         user.setEmail(textLoginEmail.getText());
         user.setPassword(EncryptService.encryptPassword(textLoginPswd.getText()));
 
+
         LoginService login = new LoginService();
 
 
@@ -45,6 +46,8 @@ public class LoginController {
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(AlbumScene);
             controller.setLabelTextUsername(login.getReturnedUser().getName());
+            controller.setUser(login.getReturnedUser());
+            loader.setController(controller);
             window.show();
         }
         else

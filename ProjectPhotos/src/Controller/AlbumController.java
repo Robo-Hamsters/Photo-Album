@@ -31,6 +31,8 @@ public class AlbumController {
     @FXML
     private TilePane tilePane;
 
+    private User user;
+
 
     public void loadImageView(){
 
@@ -58,6 +60,8 @@ public class AlbumController {
         loader.setLocation(getClass().getResource("../UI/ImageUploadForm.fxml"));
         Parent imageUploadOpen=loader.load();
         ImageUploadController controller=loader.getController();
+        controller.setUser(user);
+        loader.setController(loader);
         Stage stage = new Stage();
         stage.setTitle("Upload Image");
         stage.setScene(new Scene(imageUploadOpen));
@@ -87,4 +91,5 @@ public class AlbumController {
     public void setLabelTextUsername(String Username) {
         this.labelUsername.setText("Welocme "+Username+"!");
     }
+    public void setUser(User user) { this.user = user; }
 }
