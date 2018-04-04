@@ -108,9 +108,11 @@ public class ImageUploadController {
     }
 
     private List fillComboBox()
-    {
+    {//TODO fix this method
         DBConnector con = new DBConnector();
         con.databaseConnect();
+        con.setSession(con.getFactory().getCurrentSession()) ;
+        con.getSession().beginTransaction();
         AlbumRepo albumRepo = new AlbumRepo();
         List<String> listAlbum = new ArrayList<>();
         listAlbum=albumRepo.dbSelectAlbum(con,user);
