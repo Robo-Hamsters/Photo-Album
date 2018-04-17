@@ -30,13 +30,13 @@ public class LoginController {
     public void signIn(ActionEvent event) throws IOException
     {
         setProgressIndicatorON();
-        FXMLLoader loader=new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../UI/AlbumForm.fxml"));
-        Parent albumOpen=loader.load();
-        Scene AlbumScene=new Scene(albumOpen);
+        Parent albumOpen = loader.load();
+        Scene AlbumScene = new Scene(albumOpen);
         AlbumController controller=loader.getController();
 
-        User user=new User();
+        User user = new User();
         user.setEmail(textLoginEmail.getText());
         user.setPassword(EncryptService.encryptPassword(textLoginPswd.getText()));
 
@@ -47,6 +47,7 @@ public class LoginController {
             window.setScene(AlbumScene);
             controller.setLabelTextUsername(login.getReturnedUser().getName());
             controller.setUser(login.getReturnedUser());
+            controller.loadImageView();
             loader.setController(controller);
             window.show();
             setProgressIndicatorOFF();

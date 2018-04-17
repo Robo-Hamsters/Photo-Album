@@ -115,7 +115,7 @@ public class ImageUploadController {
         con.getSession().beginTransaction();
         AlbumRepo albumRepo = new AlbumRepo();
         List<String> listAlbum = new ArrayList<>();
-        listAlbum=albumRepo.dbSelectAlbum(con,user);
+        listAlbum=albumRepo.findByUser(con,user);
         System.out.println(listAlbum);
         return listAlbum;
     }

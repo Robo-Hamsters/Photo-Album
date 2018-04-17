@@ -3,26 +3,53 @@ package Repo;
 import Model.Photo;
 import Model.User;
 import org.hibernate.query.Query;
-
 import java.util.List;
 
 public class PhotoRepo {
 
-    public Photo finById(Photo photo,DBConnector con)
+    public List<Photo> findById(Photo photo,DBConnector con)
     {
 
-        Query query= con.getSession().createQuery("SELECT image from Photo ");
-        //TODO CONNECT KEYS AT DATABASE TO WRITE THE RIGHT QUERY
-        return new Photo();
+        Query<Photo> query= con.getSession().createQuery("from Photo where idPhoto = :frmid  ");
+        query.setParameter("frmid",photo.getIdPhoto());
+
+        List list=query.list();
+        List<Photo> returnPhoto = null;
+        returnPhoto = list;
+
+        return returnPhoto;
+
     }
-    public Photo findByName(Photo photo,DBConnector con)
+    public List<Photo> findByName(Photo photo,DBConnector con)
     {
 
-        Query query= con.getSession().createQuery("SELECT image from Photo ");
-        //TODO CONNECT KEYS AT DATABASE TO WRITE THE RIGHT QUERY
-        return new Photo();
+        Query<Photo> query= con.getSession().createQuery("from Photo where namePhoto = :frmname ");
+        query.setParameter("frmname",photo.getNamePhoto());
+
+        List list=query.list();
+        List<Photo> returnPhoto = null;
+        if(list.size() != 0)
+        {
+            returnPhoto = list;
+        }
+        return returnPhoto;
+
     }
-    public Photo dbSelectPhoto(PhotoRepo photo,DBConnector con)
+    public List<Photo> findByUser(User user,DBConnector con)
+    {
+        Query<Photo> query= con.getSession().createQuery("from Photo p inner join User u on p.user.userid = u.userid where p.user.userid = :frmuserid");
+        query.setParameter("frmuserid",user.getUserid());
+
+        List list=query.list();
+        List<Photo> returnPhoto = null;
+        if(list.size() != 0)
+        {
+            returnPhoto = list;
+        }
+        return returnPhoto;
+
+    }
+   /* public Photo dbSelectPhoto(DBConnector con)
     {
 
         Query query=con.getSession().createQuery("SELECT image from Photo where :frmuserid=user.userid");
@@ -38,7 +65,7 @@ public class PhotoRepo {
             returnPhoto.setImage(bytes);
         }
         return returnPhoto;
-    }
+    }*/
 
     public void dbInsertPhoto(Photo photo, DBConnector con)
     {

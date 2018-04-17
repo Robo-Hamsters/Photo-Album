@@ -8,17 +8,21 @@ import Repo.PhotoRepo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AlbumController {
 
@@ -40,10 +44,12 @@ public class AlbumController {
         con.getSession().beginTransaction();
 
         PhotoRepo photoRepo=new PhotoRepo();
-        Photo photo = photoRepo.dbSelectPhoto(photoRepo,con);
-        Image img = new Image(new ByteArrayInputStream(photo.getImage()));
-        imageViewer.setImage(img);
-        con.databaseDisconnect();
+        List<Photo> photos = photoRepo.findByUser(user,con);
+       // Photo photo = photoRepo.dbSelectPhoto(con);
+
+     //   Image img = new Image(new ByteArrayInputStream(photo.getImage()));
+        ImageView imageView = new ImageView();
+      //  imageView.setImage(img);
 
     }
     @FXML
@@ -61,6 +67,7 @@ public class AlbumController {
         stage.showAndWait();
 
         loadImageView();
+
 
     }
 
@@ -84,7 +91,12 @@ public class AlbumController {
     }
 
     public void setLabelTextUsername(String Username) {
-        this.labelUsername.setText("Welocme "+Username+"!");
+        this.labelUsername.setText("Welcome "+Username+"!");
     }
     public void setUser(User user) { this.user = user; }
+
+    public void imageViewCreator(){
+
+
+    }
 }
