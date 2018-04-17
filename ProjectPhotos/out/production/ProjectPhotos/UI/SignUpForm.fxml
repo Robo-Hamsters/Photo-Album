@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,8 +13,19 @@
 
 <AnchorPane prefHeight="427.0" prefWidth="397.0" style="-fx-background-color: #021526;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
    <children>
-      <AnchorPane layoutX="64.0" layoutY="59.0" prefHeight="309.0" prefWidth="270.0" style="-fx-background-color: #203339;">
+      <AnchorPane layoutX="53.0" layoutY="55.0" prefHeight="318.0" prefWidth="292.0" style="-fx-background-color: #203339;">
          <children>
+            <TextField fx:id="textName" layoutX="51.0" layoutY="41.0" prefHeight="29.0" prefWidth="178.0" promptText="Name" style="-fx-background-color: #021323;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <effect>
+                  <Lighting bumpInput="$null">
+                     <light>
+                     </light>
+                  </Lighting>
+               </effect>
+            </TextField>
             <PasswordField fx:id="textPassword" layoutX="50.0" layoutY="120.0" prefHeight="29.0" prefWidth="178.0" promptText="Password" style="-fx-background-color: #021323;">
                <font>
                   <Font size="13.0" />
@@ -21,28 +34,11 @@
                <font>
                   <Font size="13.0" />
                </font></PasswordField>
-            <TextField fx:id="textName" layoutX="52.0" layoutY="41.0" prefHeight="29.0" prefWidth="178.0" promptText="Name" style="-fx-background-color: #021323;">
-               <font>
-                  <Font size="13.0" />
-               </font></TextField>
-            <Button layoutX="67.0" layoutY="226.0" mnemonicParsing="false" onAction="#createAccount" style="-fx-background-color: #021323;" text="Create account" textFill="#9a9a9a">
-               <font>
-                  <Font size="14.0" />
-               </font></Button>
+            <Button layoutX="81.0" layoutY="212.0" mnemonicParsing="false" onAction="#createAccount" style="-fx-background-color: #021323;" text="Create account" textFill="#9a9a9a" />
             <TextField fx:id="textEmail" layoutX="51.0" layoutY="81.0" prefHeight="29.0" prefWidth="178.0" promptText="Email" style="-fx-background-color: #021323;">
                <font>
                   <Font size="13.0" />
                </font></TextField>
-            <ImageView fitHeight="23.0" fitWidth="29.0" layoutX="17.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Images/Profile_Name.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="29.0" fitWidth="41.0" layoutX="14.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Images/Email.png" />
-               </image>
-            </ImageView>
             <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="17.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Lock1.png" />
@@ -53,11 +49,24 @@
                   <Image url="@../../../Images/Lock2.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="41.0" layoutX="14.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Email.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="29.0" focusTraversable="true" layoutX="17.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../../Images/Profile_Name.png" />
+               </image>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Label layoutX="127.0" layoutY="24.0" prefHeight="35.0" prefWidth="144.0" text="Join us now!" textFill="#b2b2b2">
+      <Label layoutX="127.0" layoutY="14.0" prefHeight="35.0" prefWidth="144.0" text="Join us now!" textFill="#b2b2b2">
          <font>
-            <Font size="24.0" />
+            <Font size="22.0" />
          </font>
       </Label>
    </children>

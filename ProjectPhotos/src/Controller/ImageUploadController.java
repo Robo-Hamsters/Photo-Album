@@ -7,7 +7,10 @@ import Repo.AlbumRepo;
 import Repo.DBConnector;
 import Repo.LocationParser;
 import Model.Photo;
+import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -16,10 +19,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import javax.swing.text.html.HTMLDocument;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 
 public class ImageUploadController {
@@ -90,7 +92,8 @@ public class ImageUploadController {
                 metadata += "\nModel: No model found!";
 
             lbl_metadata.setText(metadata);
-            albumNames.setItems(FXCollections.observableArrayList(fillComboBox()));
+            fillComboBox();
+
         }
     }
 
@@ -104,20 +107,25 @@ public class ImageUploadController {
         Node source = (Node)event.getSource();
         Stage stage = (Stage)source.getScene().getWindow();
         stage.close();
-
     }
 
-    private List fillComboBox()
-    {//TODO fix this method
+    private void fillComboBox()
+    {
         DBConnector con = new DBConnector();
         con.databaseConnect();
         con.setSession(con.getFactory().getCurrentSession()) ;
         con.getSession().beginTransaction();
+
         AlbumRepo albumRepo = new AlbumRepo();
-        List<String> listAlbum = new ArrayList<>();
-        listAlbum=albumRepo.findByUser(con,user);
-        System.out.println(listAlbum);
-        return listAlbum;
+
+        List<Album> listAlbum=albumRepo.findByUser(user, con);
+        List<String> albumStr = new ArrayList<>();
+
+        for(Album album : listAlbum)
+        {
+            albumStr.add(album.getAlbumName());
+        }
+        albumNames.setItems(FXCollections.observableArrayList(albumStr));
     }
 
     public void setUser(User user) { this.user = user; }

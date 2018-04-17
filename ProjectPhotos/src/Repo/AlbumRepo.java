@@ -16,20 +16,18 @@ public class AlbumRepo {
         con.getSession().save(album);
         con.getSession().getTransaction().commit();
     }
-    public List findByUser(DBConnector con, User user)
+    public List<Album> findByUser(User user, DBConnector con)
     {
-        Query<Album> query= con.getSession().createQuery("SELECT albumname from Album p inner join User u on p.user.userid = u.userid where p.user.userid = :frmuserid");
+        Query query= con.getSession().createQuery("from Album a inner join User u on a.user.userid = u.userid where a.user.userid = :frmuserid");
         query.setParameter("frmuserid",user.getUserid());
 
-        List list=query.list();
-       /* if(list.size() != 0)
+        List<Object[]> list=query.list();
+        List<Album> returnAlbums = new ArrayList<>();
+        for(Object[] obj : list)
         {
-            for(int i=0;i<list.size();i++)
-            {
-                returnAlbum = (List<String>) list.get(i);
-            }
+            returnAlbums.add((Album)obj[0]);
         }
-        return returnAlbum;*/
-       return list;
+
+        return returnAlbums;
     }
 }

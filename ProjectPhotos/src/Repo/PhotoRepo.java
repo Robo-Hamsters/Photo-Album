@@ -10,7 +10,7 @@ public class PhotoRepo {
     public List<Photo> findById(Photo photo,DBConnector con)
     {
 
-        Query<Photo> query= con.getSession().createQuery("from Photo where idPhoto = :frmid  ");
+        Query<Photo> query= con.getSession().createQuery("from Photo where idPhoto = :frmid");
         query.setParameter("frmid",photo.getIdPhoto());
 
         List list=query.list();
@@ -23,7 +23,7 @@ public class PhotoRepo {
     public List<Photo> findByName(Photo photo,DBConnector con)
     {
 
-        Query<Photo> query= con.getSession().createQuery("from Photo where namePhoto = :frmname ");
+        Query<Photo> query= con.getSession().createQuery("from Photo where namePhoto = :frmname");
         query.setParameter("frmname",photo.getNamePhoto());
 
         List list=query.list();

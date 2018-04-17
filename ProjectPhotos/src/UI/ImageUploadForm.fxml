@@ -20,6 +20,6 @@
       <Button fx:id="btn_upload" disable="true" layoutX="26.0" layoutY="446.0" mnemonicParsing="false" onAction="#imageUpload" prefHeight="25.0" prefWidth="133.0" text="Upload" />
       <Label fx:id="lbl_metadata" layoutX="26.0" layoutY="277.0" style="-fx-text-fill: #ffffff;" />
       <Label fx:id="labelUUID" layoutX="169.0" layoutY="451.0" text="Label" textFill="#021323" />
-      <ComboBox layoutX="14.0" layoutY="230.0" prefWidth="150.0" />
+      <ComboBox fx:id="albumNames" layoutX="14.0" layoutY="230.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

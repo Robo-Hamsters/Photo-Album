@@ -2,7 +2,6 @@ package Controller;
 
 import Model.Photo;
 import Model.User;
-import Patterns.SigletonPattern;
 import Repo.DBConnector;
 import Repo.PhotoRepo;
 import javafx.event.ActionEvent;
@@ -36,8 +35,6 @@ public class AlbumController {
 
 
     public void loadImageView(){
-
-
         DBConnector con= new DBConnector();
         con.databaseConnect();
         con.setSession(con.getFactory().getCurrentSession()) ;
@@ -45,11 +42,11 @@ public class AlbumController {
 
         PhotoRepo photoRepo=new PhotoRepo();
         List<Photo> photos = photoRepo.findByUser(user,con);
-       // Photo photo = photoRepo.dbSelectPhoto(con);
+        //Photo photo = photoRepo.dbSelectPhoto(con);
 
-     //   Image img = new Image(new ByteArrayInputStream(photo.getImage()));
+        //Image img = new Image(new ByteArrayInputStream(photo.getImage()));
         ImageView imageView = new ImageView();
-      //  imageView.setImage(img);
+        //imageView.setImage(img);
 
     }
     @FXML
