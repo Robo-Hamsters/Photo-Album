@@ -44,10 +44,14 @@ public class Photo {
     @JoinColumn(name="userid",referencedColumnName = "userid")
     User user;
 
+
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="albumID",referencedColumnName = "albumID")
     Album album;
 
+    public Album getAlbum() { return album; }
+
+    public void setAlbum(Album album) { this.album = album; }
     public void setIdPhoto(UUID idPhoto) { this.idPhoto = idPhoto; }
     public void setCountry(String country) { this.country = country; }
     public void setCity(String city) { this.city = city; }

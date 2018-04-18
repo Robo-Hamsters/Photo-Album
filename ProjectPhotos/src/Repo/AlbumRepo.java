@@ -30,4 +30,22 @@ public class AlbumRepo {
 
         return returnAlbums;
     }
+
+    public Album findByName(Album album,DBConnector con)
+    {
+
+        Query query= con.getSession().createQuery("from Album a inner join User u on a.user.userid = u.userid where a.albumName = :frmname");
+        query.setParameter("frmname",album.getAlbumName());
+
+        List<Object[]> list=query.list();
+        Album returnAlbum = null;
+        if(list.size() != 0)
+        {
+            for(Object[] obj : list)
+            {
+                returnAlbum = ((Album)obj[0]);
+            }
+        }
+        return returnAlbum;
+    }
 }

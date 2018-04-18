@@ -1,13 +1,11 @@
 package Model;
 
-import Controller.LoginService;
 import Repo.DBConnector;
 import Repo.PhotoRepo;
 import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.UUID;
 

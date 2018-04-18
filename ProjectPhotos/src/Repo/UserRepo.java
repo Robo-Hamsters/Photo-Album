@@ -14,6 +14,7 @@ public class UserRepo {
             Query query= con.getSession().createQuery("SELECT email,password,name,userid from User where :frmemail=email and :frmpwd=password");
             query.setParameter("frmemail",user.getEmail());
             query.setParameter("frmpwd",user.getPassword());
+
             List<Object[]> list=query.list();
 
             User returnUser=null;
