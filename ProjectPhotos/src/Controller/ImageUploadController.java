@@ -102,10 +102,25 @@ public class ImageUploadController {
 
         photo.setUser(user);
 
+        Album album = new Album();
+        album.setAlbumName(albumNames.getValue());
+        album.setUser(user);
+
+        DBConnector con = new DBConnector();
+        con.databaseConnect();
+        con.setSession(con.getFactory().getCurrentSession()) ;
+        con.getSession().beginTransaction();
+
+        AlbumRepo albumRepo = new AlbumRepo();
+        album=albumRepo.findByName(album,con);
+
+        photo.setAlbum(album);
+
         image.saveFile(photo);
 
         Node source = (Node)event.getSource();
         Stage stage = (Stage)source.getScene().getWindow();
+        con.databaseDisconnect();
         stage.close();
     }
 
@@ -126,6 +141,7 @@ public class ImageUploadController {
             albumStr.add(album.getAlbumName());
         }
         albumNames.setItems(FXCollections.observableArrayList(albumStr));
+        con.databaseDisconnect();
     }
 
     public void setUser(User user) { this.user = user; }
