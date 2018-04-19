@@ -31,4 +31,6 @@ public class GenerateAlbumService {
         albumNames.setItems(FXCollections.observableArrayList(albumStr));
         con.databaseDisconnect();
     }
+
+
 }

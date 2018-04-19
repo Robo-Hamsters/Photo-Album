@@ -23,38 +23,58 @@ public class NewAlbumController {
     @FXML
     void createAlbum(ActionEvent event)
     {
-        DBConnector con = new DBConnector();
-        con.databaseConnect();
+        DBConnector con1 = new DBConnector();
+        con1.databaseConnect();
+        con1.setSession(con1.getFactory().getCurrentSession()) ;
+        con1.getSession().beginTransaction();
         AlbumRepo albumRepo = new AlbumRepo();
         Album album = new Album();
-        album.setAlbumID(UUID.randomUUID());
+        Album returnAlbum;
         album.setAlbumName(textAlbumName.getText());
         album.setUser(user);
+        returnAlbum = albumRepo.findByName(album,con1);
+        con1.databaseDisconnect();
 
-        if(!textAlbumName.getText().isEmpty())
+        if (returnAlbum == null)
         {
+            album.setAlbumID(UUID.randomUUID());
 
-        albumRepo.dbInsertAlbum(album,con);
+            if(!textAlbumName.getText().isEmpty())
+            {
+                DBConnector con2 = new DBConnector();
+                con2.databaseConnect();
 
-        Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Tuxedo View");
-        alert.setContentText("You create an album");
-        alert.showAndWait();
+                albumRepo.dbInsertAlbum(album, con2);
 
-        Node source = (Node)event.getSource();
-        Stage stage = (Stage)source.getScene().getWindow();
-        stage.close();
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Tuxedo View");
+                alert.setContentText("You create an album");
+                alert.showAndWait();
 
+                Node source = (Node) event.getSource();
+                Stage stage = (Stage) source.getScene().getWindow();
+                stage.close();
+                con2.databaseDisconnect();
+            }
+            else
+            {
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Tuxedo View");
+                alert.setContentText("You have to put an Album name");
+                alert.showAndWait();
+
+            }
         }
         else
         {
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Tuxedo View");
-            alert.setContentText("Invalid name");
+            alert.setContentText("This album already exists!");
             alert.showAndWait();
 
         }
-        con.databaseDisconnect();
+
+
 
     }
     public User getUser() { return user; }

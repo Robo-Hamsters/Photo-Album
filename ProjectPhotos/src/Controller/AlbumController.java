@@ -20,9 +20,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
 import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -137,8 +135,4 @@ public class AlbumController {
     }
     public void setUser(User user) { this.user = user; }
 
-    public void imageViewCreator(){
-
-
-    }
 }
