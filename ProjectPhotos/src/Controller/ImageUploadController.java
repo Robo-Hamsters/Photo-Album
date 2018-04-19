@@ -147,6 +147,7 @@ public class ImageUploadController {
             alert.setTitle("Tuxedo View");
             alert.setContentText("You can't make an Album from this photo's location.\nTHIS PHOTO IS FROM SPACE!");
             alert.showAndWait();
+            albumNames.disableProperty().setValue(false);
         }
 
     }
