@@ -5,43 +5,96 @@ import Model.User;
 import Repo.DBConnector;
 import Repo.PhotoRepo;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.TilePane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
 public class AlbumController {
 
-    @FXML
-    private ImageView imageViewer;
 
     @FXML
     private Label labelUsername;
 
+    @FXML
+    private TilePane img_tilepane;
+
     private User user;
 
-
-    public void loadImageView(){
-        DBConnector con= new DBConnector();
+    public void loadImageView() {
+        img_tilepane.getChildren().clear();
+        img_tilepane.setVgap(15);
+        img_tilepane.setHgap(15);
+        img_tilepane.setPrefColumns(4);
+        img_tilepane.setTileAlignment(Pos.TOP_LEFT);
+        DBConnector con = new DBConnector();
         con.databaseConnect();
-        con.setSession(con.getFactory().getCurrentSession()) ;
+        con.setSession(con.getFactory().getCurrentSession());
         con.getSession().beginTransaction();
 
-        PhotoRepo photoRepo=new PhotoRepo();
-        List<Photo> photos = photoRepo.findByUser(user,con);
-        //Photo photo = photoRepo.dbSelectPhoto(con);
+        PhotoRepo photoRepo = new PhotoRepo();
 
-        //Image img = new Image(new ByteArrayInputStream(photo.getImage()));
-        ImageView imageView = new ImageView();
-        //imageView.setImage(img);
+        List<Photo> photos = photoRepo.findByUser(user, con);
+        for (final Photo photo : photos) {
+            Image img = new Image(new ByteArrayInputStream(photo.getImage()),75, 65,false,false);
+            ImageView imageView = new ImageView(img);
+            img_tilepane.getChildren().addAll(imageView);
+            imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+
+                    Stage stage = new Stage();
+
+                    if(mouseEvent.getButton().equals(MouseButton.PRIMARY))
+                    {
+                        if(mouseEvent.getClickCount() == 2)
+                        {
+                            BorderPane borderPane = new BorderPane();
+                            ImageView imageView = new ImageView();
+                            Image img = new Image(new ByteArrayInputStream(photo.getImage()));
+                            imageView.setImage(img);
+                            imageView.setStyle("-fx-background-color: BLACK");
+                            imageView.setFitHeight(stage.getHeight() - 10);
+                            imageView.setPreserveRatio(true);
+                            imageView.setSmooth(true);
+                            imageView.setCache(true);
+                            borderPane.setCenter(imageView);
+                            borderPane.setStyle("-fx-background-color: BLACK");
+                            Stage newStage = new Stage();
+                            newStage.setWidth(stage.getWidth());
+                            newStage.setHeight(stage.getHeight());
+                            newStage.setTitle(photo.getNamePhoto());
+                            imageView.fitHeightProperty().bind(newStage.heightProperty());
+                            imageView.fitWidthProperty().bind(newStage.widthProperty());
+                            Scene scene = new Scene(borderPane, Color.BLACK);
+                            newStage.setScene(scene);
+                            newStage.show();
+                        }
+                    }
+
+
+                }
+            });
+        }
         con.databaseDisconnect();
-
     }
+
     @FXML
     public void openImageUploadForm(ActionEvent event) throws IOException
     {
@@ -55,7 +108,6 @@ public class AlbumController {
         stage.setTitle("Upload Image");
         stage.setScene(new Scene(imageUploadOpen));
         stage.showAndWait();
-
         loadImageView();
 
 

@@ -1,8 +1,11 @@
 package Repo;
 
+import Model.Album;
 import Model.Photo;
 import Model.User;
 import org.hibernate.query.Query;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class PhotoRepo {
@@ -37,14 +40,18 @@ public class PhotoRepo {
     }
     public List<Photo> findByUser(User user,DBConnector con)
     {
-        Query<Photo> query= con.getSession().createQuery("from Photo p inner join User u on p.user.userid = u.userid where p.user.userid = :frmuserid");
+        Query query= con.getSession().createQuery("from Photo p inner join User u on p.user.userid = u.userid where p.user.userid = :frmuserid");
         query.setParameter("frmuserid",user.getUserid());
 
-        List list=query.list();
+        List<Object[]> list=query.list();
         List<Photo> returnPhoto = null;
         if(list.size() != 0)
         {
-            returnPhoto = list;
+            returnPhoto = new ArrayList<>();
+            for(Object[] obj : list)
+            {
+                returnPhoto.add((Photo)obj[0]);
+            }
         }
         return returnPhoto;
 

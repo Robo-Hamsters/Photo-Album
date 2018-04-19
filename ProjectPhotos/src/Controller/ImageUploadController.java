@@ -97,10 +97,9 @@ public class ImageUploadController {
     private void imageUpload(ActionEvent event) throws IOException {
 
 
-        if(btn_newFolder.disableProperty().equals(true))
-        {
-            chooseFromCombo();
-        }
+        //if(btn_newFolder.disableProperty().equals(true))
+        //{
+            photo.setUser(user);
             image.saveFile(photo);
 
 
@@ -138,7 +137,6 @@ public class ImageUploadController {
             }
 
             photo.setAlbum(album);
-
             con.databaseDisconnect();
         }
         else
