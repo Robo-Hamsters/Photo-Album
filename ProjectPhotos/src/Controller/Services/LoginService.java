@@ -21,7 +21,10 @@ public class LoginService {
         UserRepo userRepo=new UserRepo();
         returnedUser = userRepo.findUserByUsernameAndPassword(user,con);
 
+        con.databaseDisconnect();
+
         return (returnedUser != null);
+
 
     }
 

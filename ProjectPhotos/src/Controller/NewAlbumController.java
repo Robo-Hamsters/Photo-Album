@@ -44,7 +44,7 @@ public class NewAlbumController {
         Node source = (Node)event.getSource();
         Stage stage = (Stage)source.getScene().getWindow();
         stage.close();
-        con.databaseDisconnect();
+
         }
         else
         {
@@ -52,7 +52,9 @@ public class NewAlbumController {
             alert.setTitle("Tuxedo View");
             alert.setContentText("Invalid name");
             alert.showAndWait();
+
         }
+        con.databaseDisconnect();
 
     }
     public User getUser() { return user; }

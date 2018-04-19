@@ -39,6 +39,7 @@ public class AlbumController {
         //Image img = new Image(new ByteArrayInputStream(photo.getImage()));
         ImageView imageView = new ImageView();
         //imageView.setImage(img);
+        con.databaseDisconnect();
 
     }
     @FXML
