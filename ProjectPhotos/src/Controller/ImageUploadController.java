@@ -96,26 +96,17 @@ public class ImageUploadController {
     @FXML
     private void imageUpload(ActionEvent event) throws IOException {
 
-        photo.setUser(user);
 
-        album.setAlbumName(albumNames.getValue());
-        album.setUser(user);
+        if(btn_newFolder.disableProperty().equals(true))
+        {
+            chooseFromCombo();
+        }
+            image.saveFile(photo);
 
-        DBConnector con = new DBConnector();
-        con.databaseConnect();
-        con.setSession(con.getFactory().getCurrentSession()) ;
-        con.getSession().beginTransaction();
-
-        AlbumRepo albumRepo = new AlbumRepo();
-        album=albumRepo.findByName(album,con);
-
-        photo.setAlbum(album);
-
-        image.saveFile(photo);
 
         Node source = (Node)event.getSource();
         Stage stage = (Stage)source.getScene().getWindow();
-        con.databaseDisconnect();
+
         stage.close();
     }
 
@@ -134,19 +125,19 @@ public class ImageUploadController {
         Album album = new Album();
         AlbumRepo albumRepo = new AlbumRepo();
 
-        if(photo.getCountry() != null || !(photo.getCountry() == "")) {
+        if(!(photo.getCountry().equals(""))) {
             album.setAlbumName(photo.getCountry());
             album.setUser(user);
             album = albumRepo.findByName(album, con);
 
-            if (album != null) {
-                photo.setAlbum(album);
+            if (album == null) {
 
-            } else {
                 album.setAlbumID(UUID.randomUUID());
                 albumRepo.dbInsertAlbum(album, con);
-                photo.setAlbum(album);
+
             }
+
+            photo.setAlbum(album);
 
             con.databaseDisconnect();
         }
@@ -154,9 +145,29 @@ public class ImageUploadController {
         {
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Tuxedo View");
-            alert.setContentText("You can't make an Album from this photo's location. THIS PHOTO IS FROM SPACE!");
+            alert.setContentText("You can't make an Album from this photo's location.\nTHIS PHOTO IS FROM SPACE!");
             alert.showAndWait();
         }
+
+    }
+    private void chooseFromCombo()
+    {
+        photo.setUser(user);
+
+        album.setAlbumName(albumNames.getValue());
+        album.setUser(user);
+
+
+        DBConnector con = new DBConnector();
+        con.databaseConnect();
+        con.setSession(con.getFactory().getCurrentSession()) ;
+        con.getSession().beginTransaction();
+
+        AlbumRepo albumRepo = new AlbumRepo();
+        album=albumRepo.findByName(album,con);
+
+        photo.setAlbum(album);
+        con.databaseDisconnect();
 
     }
 
