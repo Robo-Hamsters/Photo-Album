@@ -37,6 +37,6 @@
          </font>
       </Button>
       <Label fx:id="labelUsername" layoutX="65.0" layoutY="20.0" text="Label" textFill="WHITE" />
-      <Button fx:id="btnCreateAlbum" layoutX="90.0" layoutY="403.0" mnemonicParsing="false" onAction="#createNewAlbum" text="Create new Album" />
+      <Button fx:id="btnCreateAlbum" layoutX="90.0" layoutY="403.0" mnemonicParsing="false" onAction="#openNewAlbumForm" text="Create new Album" />
    </children>
 </AnchorPane>

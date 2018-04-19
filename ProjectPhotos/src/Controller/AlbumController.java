@@ -7,20 +7,12 @@ import Repo.PhotoRepo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
-
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class AlbumController {
@@ -67,8 +59,8 @@ public class AlbumController {
 
 
     }
-
-    public void createNewAlbum(ActionEvent event) throws IOException
+    @FXML
+    public void openNewAlbumForm(ActionEvent event) throws IOException
     {
 
         FXMLLoader loader=new FXMLLoader();
