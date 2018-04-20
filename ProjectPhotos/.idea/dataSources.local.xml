@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="dataSourceStorageLocal">
-    <data-source name="Repo:hibernate.cfg.xml/Hibernate" uuid="ebeef70e-7169-43f1-97a3-647c1405afd5">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-      <introspection-schemas>hibernate:public</introspection-schemas>
-    </data-source>
-  </component>
-</project>
