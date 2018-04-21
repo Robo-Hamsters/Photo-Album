@@ -5,56 +5,49 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
-<?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="427.0" prefWidth="397.0" style="-fx-background-color: #021526;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
+<AnchorPane prefHeight="427.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
    <children>
-      <AnchorPane layoutX="53.0" layoutY="55.0" prefHeight="318.0" prefWidth="292.0" style="-fx-background-color: #203339;">
+      <AnchorPane fx:id="signUpPane" layoutX="53.0" layoutY="55.0" prefHeight="318.0" prefWidth="292.0">
          <children>
-            <TextField fx:id="textName" layoutX="51.0" layoutY="41.0" prefHeight="29.0" prefWidth="178.0" promptText="Name" style="-fx-background-color: #021323;">
+            <Button layoutX="91.0" layoutY="232.0" mnemonicParsing="false" onAction="#createAccount" text="Create account" textFill="#9a9a9a" />
+            <TextField fx:id="textName" layoutX="51.0" layoutY="47.0" prefHeight="29.0" prefWidth="178.0" promptText="Name">
                <font>
                   <Font size="13.0" />
                </font>
-               <effect>
-                  <Lighting bumpInput="$null">
-                     <light>
-                     </light>
-                  </Lighting>
-               </effect>
             </TextField>
-            <PasswordField fx:id="textPassword" layoutX="50.0" layoutY="120.0" prefHeight="29.0" prefWidth="178.0" promptText="Password" style="-fx-background-color: #021323;">
-               <font>
-                  <Font size="13.0" />
-               </font></PasswordField>
-            <PasswordField fx:id="textConPassword" layoutX="51.0" layoutY="162.0" prefHeight="29.0" prefWidth="178.0" promptText="Confirm Password" style="-fx-background-color: #021323;">
-               <font>
-                  <Font size="13.0" />
-               </font></PasswordField>
-            <Button layoutX="81.0" layoutY="212.0" mnemonicParsing="false" onAction="#createAccount" style="-fx-background-color: #021323;" text="Create account" textFill="#9a9a9a" />
-            <TextField fx:id="textEmail" layoutX="51.0" layoutY="81.0" prefHeight="29.0" prefWidth="178.0" promptText="Email" style="-fx-background-color: #021323;">
+            <TextField fx:id="textEmail" layoutX="51.0" layoutY="87.0" prefHeight="29.0" prefWidth="178.0" promptText="Email">
                <font>
                   <Font size="13.0" />
                </font></TextField>
-            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="17.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+            <PasswordField fx:id="textPassword" layoutX="50.0" layoutY="126.0" prefHeight="29.0" prefWidth="178.0" promptText="Password">
+               <font>
+                  <Font size="13.0" />
+               </font></PasswordField>
+            <PasswordField fx:id="textConPassword" layoutX="51.0" layoutY="168.0" prefHeight="29.0" prefWidth="178.0" promptText="Confirm Password">
+               <font>
+                  <Font size="13.0" />
+               </font></PasswordField>
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="17.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Lock1.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="23.0" fitWidth="29.0" layoutX="17.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="23.0" fitWidth="29.0" layoutX="17.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Lock2.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="29.0" fitWidth="41.0" layoutX="14.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="29.0" fitWidth="41.0" layoutX="14.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Images/Email.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="23.0" fitWidth="29.0" focusTraversable="true" layoutX="17.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fitHeight="23.0" fitWidth="29.0" focusTraversable="true" layoutX="17.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../../Images/Profile_Name.png" />
                </image>
@@ -64,7 +57,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label layoutX="127.0" layoutY="14.0" prefHeight="35.0" prefWidth="144.0" text="Join us now!" textFill="#b2b2b2">
+      <Label fx:id="joinUsNowLabel" layoutX="127.0" layoutY="14.0" prefHeight="35.0" prefWidth="144.0" text="Join us now!" textFill="#b2b2b2">
          <font>
             <Font size="22.0" />
          </font>

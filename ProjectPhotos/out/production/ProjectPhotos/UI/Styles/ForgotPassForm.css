@@ -1,5 +1,9 @@
 .root {
-    -fx-background-color: #000c18;
+    -fx-background-color: #203339;
+}
+
+.label {
+    -fx-text-fill: #fff;
 }
 
 .button {
@@ -13,36 +17,15 @@
 }
 
 .button:hover {
-    -fx-background-color: linear-gradient(#2a5058, #61a2b1);
+    -fx-background-color: linear-gradient(#111f22, #437c89);
 }
 
 .text-field {
-    -fx-background-color: #000c18;
     -fx-text-fill: #fff;
     -fx-font-size: 14px;
 }
 
 .hyperlink {
     -fx-text-fill: #52909e;
-    -fx-font-size: 12px;
+    -fx-font-size: 14px;
 }
-
-#loginPane {
-    -fx-background-color: #203339;
-}
-
-#tuxedoViewLabel {
-    -fx-text-fill: #ff6a6a;
-    -fx-font-size: 26px;
-}
-
-#tuxedoViewDescription {
-    -fx-text-fill: #ff6a6a;
-    -fx-font-size: 17px;
-}
-
-#loginLabel {
-    -fx-text-fill: #fff;
-    -fx-font-size: 33px;
-}
-

@@ -22,27 +22,17 @@
     -fx-font-size: 14px;
 }
 
-.hyperlink {
-    -fx-text-fill: #52909e;
-    -fx-font-size: 12px;
+.password-field {
+    -fx-background-color: #000c18;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
 }
 
-#loginPane {
+#signUpPane {
     -fx-background-color: #203339;
 }
 
-#tuxedoViewLabel {
-    -fx-text-fill: #ff6a6a;
-    -fx-font-size: 26px;
+#joinUsNowLabel {
+    -fx-text-fill:  #fff;
+    -fx-font-size: 24px;
 }
-
-#tuxedoViewDescription {
-    -fx-text-fill: #ff6a6a;
-    -fx-font-size: 17px;
-}
-
-#loginLabel {
-    -fx-text-fill: #fff;
-    -fx-font-size: 33px;
-}
-

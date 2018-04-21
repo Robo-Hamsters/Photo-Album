@@ -34,7 +34,8 @@ public class LoginController {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../UI/AlbumForm.fxml"));
         Parent albumOpen = loader.load();
-        Scene AlbumScene = new Scene(albumOpen);
+        Scene albumScene = new Scene(albumOpen);
+
         AlbumController controller=loader.getController();
 
         User user = new User();
@@ -45,7 +46,7 @@ public class LoginController {
 
         if(login.loginUser(user)) {
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(AlbumScene);
+            window.setScene(albumScene);
             window.setMaximized(true);
             window.setResizable(true);
             controller.setLabelTextUsername(login.getReturnedUser().getName());
@@ -69,13 +70,13 @@ public class LoginController {
 
     public void openSignUpForm(ActionEvent event) throws IOException
     {
-        FXMLLoader loader=new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../UI/SignUpForm.fxml"));
-        Parent signupOpen=loader.load();
-
+        Parent signupOpen = loader.load();
         Stage stage = new Stage();
         stage.setTitle("Create new Account");
         stage.setScene(new Scene(signupOpen));
+        signupOpen.getStylesheets().add(SignupController.class.getResource("../UI/Styles/SignUpForm.css").toExternalForm());
         stage.setResizable(false);
         stage.showAndWait();
     }
@@ -85,10 +86,10 @@ public class LoginController {
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(getClass().getResource("../UI/ForgotPassForm.fxml"));
         Parent forgotPassLoader=loader.load();
-
         Stage stage = new Stage();
         stage.setTitle("Forgot Password");
         stage.setScene(new Scene(forgotPassLoader));
+        forgotPassLoader.getStylesheets().add(ForgotPassController.class.getResource("../UI/Styles/ForgotPassForm.css").toExternalForm());
         stage.showAndWait();
     }
 

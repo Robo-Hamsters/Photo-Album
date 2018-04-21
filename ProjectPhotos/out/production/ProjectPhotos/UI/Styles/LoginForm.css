@@ -4,7 +4,6 @@
 
 .button {
     /* -fx-background-color:  #000c18; */
-    /* -fx-text-fill: #ffffff; */
     -fx-text-fill: #fff;
     -fx-font-family: "Arial Narrow";
     -fx-font-size: 13px;
@@ -14,7 +13,7 @@
 }
 
 .button:hover {
-    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+    -fx-background-color: linear-gradient(#2a5058, #61a2b1);
 }
 
 .text-field {
@@ -43,7 +42,7 @@
 }
 
 #loginLabel {
-    -fx-text-fill:  #fff;
+    -fx-text-fill: #fff;
     -fx-font-size: 33px;
 }
 
