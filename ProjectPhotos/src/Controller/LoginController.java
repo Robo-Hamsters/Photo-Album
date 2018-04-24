@@ -35,6 +35,7 @@ public class LoginController {
         loader.setLocation(getClass().getResource("../UI/AlbumForm.fxml"));
         Parent albumOpen = loader.load();
         Scene albumScene = new Scene(albumOpen);
+        albumOpen.getStylesheets().add(AlbumController.class.getResource("../UI/Styles/AlbumForm.css").toExternalForm());
 
         AlbumController controller=loader.getController();
 

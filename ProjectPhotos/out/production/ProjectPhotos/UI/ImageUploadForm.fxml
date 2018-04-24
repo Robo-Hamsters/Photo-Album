@@ -8,16 +8,16 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="485.0" prefWidth="709.0" style="-fx-background-color: #021323;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ImageUploadController">
+<AnchorPane prefHeight="485.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ImageUploadController">
    <children>
       <Button layoutX="26.0" layoutY="23.0" mnemonicParsing="false" onAction="#selectImage" prefHeight="25.0" prefWidth="133.0" text="Select image..." />
       <ImageView fx:id="imageViewer" fitHeight="401.0" fitWidth="456.0" layoutX="187.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
       <Accordion layoutX="26.0" layoutY="171.0" />
       <Button fx:id="btn_newFolder" disable="true" layoutX="14.0" layoutY="178.0" mnemonicParsing="false" onAction="#generateByLocation" prefHeight="26.0" prefWidth="150.0" text="Album by Location" />
-      <TextField fx:id="tBox_tagImg" disable="true" layoutX="26.0" layoutY="82.0" prefHeight="26.0" prefWidth="133.0" promptText="Tag image..." />
+      <TextField fx:id="tBox_tagImg" disable="true" layoutX="16.0" layoutY="82.0" prefHeight="26.0" prefWidth="150.0" promptText="Tag image..." />
       <Button fx:id="btn_upload" disable="true" layoutX="26.0" layoutY="446.0" mnemonicParsing="false" onAction="#imageUpload" prefHeight="25.0" prefWidth="133.0" text="Upload" />
-      <Label fx:id="lbl_metadata" layoutX="26.0" layoutY="277.0" style="-fx-text-fill: #ffffff;" />
-      <Label fx:id="labelUUID" layoutX="169.0" layoutY="451.0" text="Label" textFill="#021323" />
+      <Label fx:id="lbl_metadata" layoutX="26.0" layoutY="277.0"/>
+      <Label fx:id="labelUUID" layoutX="169.0" layoutY="451.0" prefHeight="17.0" prefWidth="74.0" text="Label" textFill="#021323" />
       <ComboBox fx:id="albumComboBox" disable="true" layoutX="14.0" layoutY="127.0" prefWidth="150.0" promptText="New Album" />
    </children>
 </AnchorPane>

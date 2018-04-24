@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UI/Styles/ForgotPassForm.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UI/Styles/SignUpForm.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/UI/Styles/AlbumForm.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/UI/Styles/ImageUploadForm.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/UI/Styles/NewAlbumForm.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/AlbumController.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/AlbumController.class" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/LoginController.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/LoginController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/ForgotPassForm.fxml" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/ForgotPassForm.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/SignUpForm.fxml" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/SignUpForm.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/Styles/LoginForm.css" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/Styles/LoginForm.css" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/AlbumForm.fxml" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/AlbumForm.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AlbumController.java" afterPath="$PROJECT_DIR$/src/Controller/AlbumController.java" />
       <change beforePath="$PROJECT_DIR$/src/Controller/LoginController.java" afterPath="$PROJECT_DIR$/src/Controller/LoginController.java" />
-      <change beforePath="$PROJECT_DIR$/src/UI/ForgotPassForm.fxml" afterPath="$PROJECT_DIR$/src/UI/ForgotPassForm.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/UI/LoginForm.fxml" afterPath="$PROJECT_DIR$/src/UI/LoginForm.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/UI/SignUpForm.fxml" afterPath="$PROJECT_DIR$/src/UI/SignUpForm.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Styles/LoginForm.css" afterPath="$PROJECT_DIR$/src/UI/Styles/LoginForm.css" />
+      <change beforePath="$PROJECT_DIR$/src/UI/AlbumForm.fxml" afterPath="$PROJECT_DIR$/src/UI/AlbumForm.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/UI/ImageUploadForm.fxml" afterPath="$PROJECT_DIR$/src/UI/ImageUploadForm.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/UI/NewAlbumForm.fxml" afterPath="$PROJECT_DIR$/src/UI/NewAlbumForm.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,79 +94,7 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LoginForm.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UI/Styles/LoginForm.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginForm.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UI/LoginForm.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="45" column="63" lean-forward="false" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForgotPassForm.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/UI/Styles/ForgotPassForm.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignUpForm.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UI/SignUpForm.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-              <folding>
-                <marker date="1524323413094" expanded="true" signature="2743:2959" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="91" column="138" lean-forward="false" selection-start-line="91" selection-start-column="138" selection-end-line="91" selection-end-column="138" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForgotPassForm.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UI/ForgotPassForm.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="4" column="41" lean-forward="true" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -205,10 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/Photos.java" />
-        <option value="$PROJECT_DIR$/src/sample/AlbumMain.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Controller.java" />
-        <option value="$PROJECT_DIR$/src/sample/FileUpload.java" />
         <option value="$PROJECT_DIR$/src/sample/ControllerAlbum.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller/ControllerAlbum.java" />
@@ -243,19 +167,23 @@
         <option value="$PROJECT_DIR$/src/Repo/PhotoRepo.java" />
         <option value="$PROJECT_DIR$/src/Controller/NewAlbumController.java" />
         <option value="$PROJECT_DIR$/src/Controller/Services/GenerateAlbumService.java" />
-        <option value="$PROJECT_DIR$/src/UI/ImageUploadForm.fxml" />
         <option value="$PROJECT_DIR$/src/Repo/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/Controller/AlbumController.java" />
-        <option value="$PROJECT_DIR$/src/UI/AlbumForm.fxml" />
         <option value="$PROJECT_DIR$/src/Controller/ImageUploadController.java" />
         <option value="$PROJECT_DIR$/src/Model/Main.java" />
         <option value="$PROJECT_DIR$/src/UI/Styles/SignUpForm.css" />
-        <option value="$PROJECT_DIR$/src/Controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/UI/Styles/LoginForm.css" />
         <option value="$PROJECT_DIR$/src/UI/ForgotPassForm.fxml" />
         <option value="$PROJECT_DIR$/src/UI/LoginForm.fxml" />
         <option value="$PROJECT_DIR$/src/UI/Styles/ForgotPassForm.css" />
         <option value="$PROJECT_DIR$/src/UI/SignUpForm.fxml" />
+        <option value="$PROJECT_DIR$/src/UI/AlbumForm.fxml" />
+        <option value="$PROJECT_DIR$/src/UI/Styles/AlbumForm.css" />
+        <option value="$PROJECT_DIR$/src/UI/Styles/NewAlbumForm.css" />
+        <option value="$PROJECT_DIR$/src/UI/NewAlbumForm.fxml" />
+        <option value="$PROJECT_DIR$/src/UI/ImageUploadForm.fxml" />
+        <option value="$PROJECT_DIR$/src/Controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/AlbumController.java" />
+        <option value="$PROJECT_DIR$/src/UI/Styles/ImageUploadForm.css" />
       </list>
     </option>
   </component>
@@ -272,8 +200,9 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="49" />
+    <option name="y" value="-19" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -296,9 +225,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -581,7 +510,8 @@
       <workItem from="1524214474259" duration="3315000" />
       <workItem from="1524224244501" duration="356000" />
       <workItem from="1524310782688" duration="4627000" />
-      <workItem from="1524316091497" duration="5765000" />
+      <workItem from="1524316091497" duration="5867000" />
+      <workItem from="1524589406425" duration="5151000" />
     </task>
     <task id="LOCAL-00001" summary="Save file">
       <created>1521769628723</created>
@@ -601,7 +531,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217055000" />
+    <option name="totallyTimeSpent" value="222308000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -613,7 +543,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -630,8 +560,9 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17286652" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26545843" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -649,7 +580,6 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3496802" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -682,7 +612,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17377399" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26545843" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -740,25 +670,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/LoginForm.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewAccount.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/AlbumMain.fxml" />
     <entry file="file://$PROJECT_DIR$/src/Model/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -774,13 +685,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/LoginForm.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Main.java">
@@ -798,13 +709,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/LoginForm.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Main.java">
@@ -822,13 +733,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/LoginForm.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Main.java">
@@ -839,13 +750,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/LoginForm.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/LoginController.java">
@@ -948,17 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ImageUploadForm.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repo/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -980,27 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/AlbumForm.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="31" column="71" lean-forward="true" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AlbumController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="124" column="19" lean-forward="false" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ImageUploadController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -1008,6 +887,81 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Styles/SignUpForm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/SignUpForm.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/LoginForm.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="45" column="63" lean-forward="false" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Styles/ForgotPassForm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ForgotPassForm.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Styles/AlbumForm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/AlbumForm.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Styles/LoginForm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,71 +973,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Styles/SignUpForm.css">
+    <entry file="file://$PROJECT_DIR$/src/Controller/AlbumController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <state relative-caret-position="243">
+          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Styles/ImageUploadForm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ImageUploadForm.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Styles/NewAlbumForm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="91" column="138" lean-forward="false" selection-start-line="91" selection-start-column="138" selection-end-line="91" selection-end-column="138" />
+        <state relative-caret-position="528">
+          <caret line="37" column="121" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="121" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ForgotPassForm.fxml">
+    <entry file="file://$PROJECT_DIR$/src/UI/NewAlbumForm.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="4" column="41" lean-forward="true" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/SignUpForm.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-          <folding>
-            <marker date="1524323413094" expanded="true" signature="2743:2959" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/LoginForm.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="45" column="63" lean-forward="false" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Styles/LoginForm.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Styles/ForgotPassForm.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-          <folding />
-        </state>
       </provider>
     </entry>
   </component>

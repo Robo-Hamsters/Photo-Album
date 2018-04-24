@@ -111,10 +111,12 @@ public class AlbumController {
         Stage stage = new Stage();
         stage.setTitle("Upload Image");
         stage.setScene(new Scene(imageUploadOpen));
+        imageUploadOpen.getStylesheets().add(ImageUploadController.class.getResource("../UI/Styles/ImageUploadForm.css").toExternalForm());
         stage.setResizable(false);
         stage.showAndWait();
         loadImageView();
     }
+
     @FXML
     public void openNewAlbumForm(ActionEvent event) throws IOException
     {
@@ -126,6 +128,7 @@ public class AlbumController {
         Stage stage = new Stage();
         stage.setTitle("Create album");
         stage.setScene(new Scene(newAlbum));
+        newAlbum.getStylesheets().add(NewAlbumController.class.getResource("../UI/Styles/NewAlbumForm.css").toExternalForm());
         controller.setUser(user);
         loader.setController(controller);
         stage.showAndWait();

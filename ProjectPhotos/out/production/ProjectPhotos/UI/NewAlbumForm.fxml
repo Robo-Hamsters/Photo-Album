@@ -5,10 +5,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="169.0" prefWidth="327.0" style="-fx-background-color: #203339;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewAlbumController">
+<AnchorPane prefHeight="169.0" prefWidth="327.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewAlbumController">
    <children>
-      <TextField fx:id="textAlbumName" layoutX="78.0" layoutY="73.0" promptText="Album name" style="-fx-background-color: #000c18;" />
+      <TextField fx:id="textAlbumName" layoutX="79.0" layoutY="60.0" promptText="Album name" />
       <Button layoutX="110.0" layoutY="121.0" mnemonicParsing="false" onAction="#createAlbum" text="Create album" />
-      <Label layoutX="100.0" layoutY="33.0" text="Insert album name:" textFill="WHITE" />
+      <Label layoutX="77.0" layoutY="31.0" text="Insert album name:" />
    </children>
 </AnchorPane>
