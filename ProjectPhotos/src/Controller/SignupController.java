@@ -3,9 +3,8 @@ package Controller;
 
 import Authentication.EncryptService;
 import Controller.Services.SignUpService;
+import Controller.Services.ValidationService;
 import Model.User;
-import Repo.DBConnector;
-import Repo.UserRepo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -15,9 +14,10 @@ import javafx.stage.Stage;
 
 import java.util.UUID;
 
-public class SignupController {
 
-    SignUpService service = new SignUpService();
+public class SignupController  {
+
+    ValidationService service = new ValidationService();
 
     @FXML
     private TextField textName;
@@ -28,23 +28,24 @@ public class SignupController {
     @FXML
     private TextField textConPassword;
 
+    private User user;
+
     @FXML
     public void createAccount(ActionEvent event)
     {
         if(service.checkValidation(textName, textEmail, textPassword, textConPassword))
         {
-            User user=new User();
+            user=new User();
             user.setName(textName.getText());
             user.setEmail(textEmail.getText());
             user.setUserid(UUID.randomUUID());
             user.setEmail(textEmail.getText());
             user.setPassword(EncryptService.encryptPassword(textPassword.getText()));
 
-            DBConnector con=new DBConnector();
-            con.databaseConnect();
-            UserRepo repo=new UserRepo();
-            repo.dbInsertUser(user,con);
-            con.databaseDisconnect();
+            SignUpService signUpService = new SignUpService();
+
+            signUpService.createUser(user);
+
 
             Node source = (Node)event.getSource();
             Stage stage = (Stage)source.getScene().getWindow();
@@ -61,6 +62,7 @@ public class SignupController {
             service.clearMessage();
         }
     }
+
 
 
 }

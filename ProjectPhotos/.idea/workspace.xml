@@ -2,18 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UI/Styles/AlbumForm.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UI/Styles/ImageUploadForm.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UI/Styles/NewAlbumForm.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Controller/Services/ImageUploadService.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/AlbumController$1.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/AlbumController.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/AlbumController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/LoginController.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/LoginController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/AlbumForm.fxml" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/AlbumForm.fxml" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/ImageUploadController.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/ImageUploadController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/NewAlbumController.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/NewAlbumController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/Services/GenerateAlbumService.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/Services/GenerateAlbumService.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/Services/LoginService.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/Services/LoginService.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/Services/SignUpService.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/Services/SignUpService.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/SignupController.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Controller/SignupController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Model/FileManager.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Model/FileManager.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Repo/AlbumRepo.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Repo/AlbumRepo.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Repo/PhotoRepo.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Repo/PhotoRepo.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Repo/UserRepo.class" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Repo/UserRepo.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/Repo/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/Repo/hibernate.cfg.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/ImageUploadForm.fxml" afterPath="$PROJECT_DIR$/out/production/ProjectPhotos/UI/ImageUploadForm.fxml" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AlbumController.java" afterPath="$PROJECT_DIR$/src/Controller/AlbumController.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LoginController.java" afterPath="$PROJECT_DIR$/src/Controller/LoginController.java" />
-      <change beforePath="$PROJECT_DIR$/src/UI/AlbumForm.fxml" afterPath="$PROJECT_DIR$/src/UI/AlbumForm.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ImageUploadController.java" afterPath="$PROJECT_DIR$/src/Controller/ImageUploadController.java" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/NewAlbumController.java" afterPath="$PROJECT_DIR$/src/Controller/NewAlbumController.java" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Services/GenerateAlbumService.java" afterPath="$PROJECT_DIR$/src/Controller/Services/GenerateAlbumService.java" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Services/LoginService.java" afterPath="$PROJECT_DIR$/src/Controller/Services/LoginService.java" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Services/SignUpService.java" afterPath="$PROJECT_DIR$/src/Controller/Services/ValidationService.java" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SignupController.java" afterPath="$PROJECT_DIR$/src/Controller/SignupController.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/FileManager.java" afterPath="$PROJECT_DIR$/src/Model/FileManager.java" />
+      <change beforePath="$PROJECT_DIR$/src/Repo/AlbumRepo.java" afterPath="$PROJECT_DIR$/src/Repo/AlbumRepo.java" />
+      <change beforePath="$PROJECT_DIR$/src/Repo/PhotoRepo.java" afterPath="$PROJECT_DIR$/src/Repo/PhotoRepo.java" />
+      <change beforePath="$PROJECT_DIR$/src/Repo/UserRepo.java" afterPath="$PROJECT_DIR$/src/Repo/UserRepo.java" />
+      <change beforePath="$PROJECT_DIR$/src/Repo/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/Repo/hibernate.cfg.xml" />
       <change beforePath="$PROJECT_DIR$/src/UI/ImageUploadForm.fxml" afterPath="$PROJECT_DIR$/src/UI/ImageUploadForm.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/UI/NewAlbumForm.fxml" afterPath="$PROJECT_DIR$/src/UI/NewAlbumForm.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,14 +111,69 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="ImageUploadService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Services/ImageUploadService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewAlbumService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Services/NewAlbumService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignUpService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Services/SignUpService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlbumRepo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repo/AlbumRepo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repo/UserRepo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -133,12 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/ControllerAlbum.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controller/Controller.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controller/ControllerAlbum.java" />
-        <option value="$PROJECT_DIR$/src/sample/Model/FileUpload.java" />
-        <option value="$PROJECT_DIR$/src/sample/Model/Main.java" />
-        <option value="$PROJECT_DIR$/src/sample/Model/Photos.java" />
         <option value="$PROJECT_DIR$/src/sample/Model/User.java" />
         <option value="$PROJECT_DIR$/src/Controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
@@ -159,16 +225,6 @@
         <option value="$PROJECT_DIR$/src/Model/User.java" />
         <option value="$PROJECT_DIR$/src/Controller/LoginService.java" />
         <option value="$PROJECT_DIR$/src/Repo/DBConnector.java" />
-        <option value="$PROJECT_DIR$/src/Repo/UserRepo.java" />
-        <option value="$PROJECT_DIR$/src/Controller/SignupController.java" />
-        <option value="$PROJECT_DIR$/src/Model/FileManager.java" />
-        <option value="$PROJECT_DIR$/src/Repo/AlbumRepo.java" />
-        <option value="$PROJECT_DIR$/src/Controller/Services/LoginService.java" />
-        <option value="$PROJECT_DIR$/src/Repo/PhotoRepo.java" />
-        <option value="$PROJECT_DIR$/src/Controller/NewAlbumController.java" />
-        <option value="$PROJECT_DIR$/src/Controller/Services/GenerateAlbumService.java" />
-        <option value="$PROJECT_DIR$/src/Repo/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/Controller/ImageUploadController.java" />
         <option value="$PROJECT_DIR$/src/Model/Main.java" />
         <option value="$PROJECT_DIR$/src/UI/Styles/SignUpForm.css" />
         <option value="$PROJECT_DIR$/src/UI/Styles/LoginForm.css" />
@@ -180,10 +236,26 @@
         <option value="$PROJECT_DIR$/src/UI/Styles/AlbumForm.css" />
         <option value="$PROJECT_DIR$/src/UI/Styles/NewAlbumForm.css" />
         <option value="$PROJECT_DIR$/src/UI/NewAlbumForm.fxml" />
-        <option value="$PROJECT_DIR$/src/UI/ImageUploadForm.fxml" />
         <option value="$PROJECT_DIR$/src/Controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/Controller/AlbumController.java" />
         <option value="$PROJECT_DIR$/src/UI/Styles/ImageUploadForm.css" />
+        <option value="$PROJECT_DIR$/src/Repo/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/Controller/Services/LoginService.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Services/GenerateAlbumService.java" />
+        <option value="$PROJECT_DIR$/src/UI/ImageUploadForm.fxml" />
+        <option value="$PROJECT_DIR$/src/Repo/AlbumRepo.java" />
+        <option value="$PROJECT_DIR$/src/Repo/UserRepo.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Services/ValidationService.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Services/SignUpService.java" />
+        <option value="$PROJECT_DIR$/src/Controller/SignupController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Services/TransactionHandler.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Services/NewAlbumService.java" />
+        <option value="$PROJECT_DIR$/src/Controller/NewAlbumController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Services/ImageUploadService.java" />
+        <option value="$PROJECT_DIR$/src/Model/FileManager.java" />
+        <option value="$PROJECT_DIR$/src/Repo/PhotoRepo.java" />
+        <option value="$PROJECT_DIR$/src/Controller/ImageUploadController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Services/AlbumService.java" />
+        <option value="$PROJECT_DIR$/src/Controller/AlbumController.java" />
       </list>
     </option>
   </component>
@@ -201,10 +273,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="49" />
-    <option name="y" value="-19" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="99" />
+    <option name="y" value="123" />
+    <option name="width" value="972" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -226,9 +298,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,19 +326,21 @@
               <item name="ProjectPhotos" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPhotos" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="Repo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPhotos" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPhotos" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="Styles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -512,6 +583,8 @@
       <workItem from="1524310782688" duration="4627000" />
       <workItem from="1524316091497" duration="5867000" />
       <workItem from="1524589406425" duration="5151000" />
+      <workItem from="1524673045941" duration="1265000" />
+      <workItem from="1524676014953" duration="15150000" />
     </task>
     <task id="LOCAL-00001" summary="Save file">
       <created>1521769628723</created>
@@ -531,7 +604,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222308000" />
+    <option name="totallyTimeSpent" value="238723000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -543,11 +616,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="41" y="-4" width="1239" height="724" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2236842" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22330096" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -555,14 +629,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1791531" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29935277" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26545843" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2639225" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -634,28 +708,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Repo/PhotoRepo.java</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Repo/PhotoRepo.java</url>
-          <line>61</line>
-          <properties />
-          <option name="timeStamp" value="152" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Repo/PhotoRepo.java</url>
-          <line>57</line>
-          <properties class="Repo.PhotoRepo">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="150" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="198" />
     </breakpoint-manager>
     <watches-manager>
@@ -670,61 +722,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Model/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/LoginForm.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/LoginForm.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -794,33 +791,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repo/UserRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="35" column="5" lean-forward="false" selection-start-line="29" selection-start-column="3" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/LoginService.java" />
     <entry file="file://$PROJECT_DIR$/src/Model/Photo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="52" column="61" lean-forward="true" selection-start-line="52" selection-start-column="61" selection-end-line="52" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repo/PhotoRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,62 +806,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Services/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SignupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="50" column="26" lean-forward="false" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Album.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/NewAlbumController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="71" column="45" lean-forward="true" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repo/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="81" lean-forward="true" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Services/GenerateAlbumService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repo/AlbumRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ImageUploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="120" column="21" lean-forward="false" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -923,7 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,30 +860,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Styles/AlbumForm.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/AlbumForm.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Styles/LoginForm.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -973,46 +875,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AlbumController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Styles/ImageUploadForm.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ImageUploadForm.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Styles/NewAlbumForm.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="37" column="121" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="121" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,6 +898,207 @@
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Styles/AlbumForm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repo/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="29" column="53" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ForgotPassController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/AlbumForm.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ImageUploadForm.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Services/LoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repo/UserRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Services/ValidationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Services/SignUpService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Services/GenerateAlbumService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Services/TransactionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/NewAlbumController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SignupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/FileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repo/PhotoRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repo/AlbumRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ImageUploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Services/NewAlbumService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AlbumController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Services/AlbumService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Services/ImageUploadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

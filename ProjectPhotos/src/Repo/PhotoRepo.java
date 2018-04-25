@@ -1,6 +1,5 @@
 package Repo;
 
-import Model.Album;
 import Model.Photo;
 import Model.User;
 import org.hibernate.query.Query;
@@ -76,8 +75,6 @@ public class PhotoRepo {
 
     public void dbInsertPhoto(Photo photo, DBConnector con)
     {
-        con.setSession(con.getFactory().getCurrentSession()) ;
-        con.getSession().beginTransaction();
         con.getSession().save(photo);
         con.getSession().getTransaction().commit();
     }

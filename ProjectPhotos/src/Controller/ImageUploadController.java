@@ -1,11 +1,10 @@
 package Controller;
 
 import Controller.Services.GenerateAlbumService;
+import Controller.Services.ImageUploadService;
 import Model.Album;
 import Model.FileManager;
 import Model.User;
-import Repo.AlbumRepo;
-import Repo.DBConnector;
 import Repo.LocationParser;
 import Model.Photo;
 import javafx.event.ActionEvent;
@@ -16,15 +15,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.*;
 
 
 public class ImageUploadController {
 
     @FXML
     private ImageView imageViewer;
-    @FXML
-    private Button btn_newFolder;
     @FXML
     private TextField tBox_tagImg;
     @FXML
@@ -52,7 +48,6 @@ public class ImageUploadController {
             Image imageObj = new Image(image.getFile().toURI().toString());
             imageViewer.setImage(imageObj);
 
-            btn_newFolder.disableProperty().setValue(false);
             tBox_tagImg.disableProperty().setValue(false);
             btn_upload.disableProperty().setValue(false);
             albumComboBox.disableProperty().setValue(false);
@@ -98,7 +93,14 @@ public class ImageUploadController {
     private void imageUpload(ActionEvent event) throws IOException {
 
             album = new Album();
-            chooseFromCombo();
+            Album returnAlbum = new Album();
+            album.setAlbumName(albumComboBox.getValue());
+            album.setUser(user);
+
+            ImageUploadService service = new ImageUploadService();
+            returnAlbum = service.chooseFromCombo(album);
+
+            photo.setAlbum(returnAlbum);
             photo.setUser(user);
             image.saveFile(photo);
 
@@ -110,59 +112,10 @@ public class ImageUploadController {
     }
 
 
-    @FXML
-    private void generateByLocation()
-    {
-        btn_newFolder.disableProperty().setValue(true);
 
-        DBConnector con1 = new DBConnector();
-        con1.databaseConnect();
-        con1.setSession(con1.getFactory().getCurrentSession()) ;
-        con1.getSession().beginTransaction();
 
-        Album album = new Album();
-        Album returnAlbum = new Album();
-        AlbumRepo albumRepo = new AlbumRepo();
-
-        if(!(photo.getCountry().equals(""))) {
-            album.setAlbumName(photo.getCountry());
-            album.setUser(user);
-            returnAlbum = albumRepo.findByName(album, con1);
-            if (returnAlbum == null) {
-                DBConnector con2 = new DBConnector();
-                con2.databaseConnect();
-                album.setAlbumID(UUID.randomUUID());
-                albumRepo.dbInsertAlbum(album, con2);
-                con2.databaseDisconnect();
-            }
-            photo.setAlbum(album);
-        }
-        else
-        {
-            Alert alert=new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Tuxedo View");
-            alert.setContentText("You can't make an Album from this photo's location.\nTHIS PHOTO IS FROM SPACE!");
-            alert.showAndWait();
-        }
-    con1.databaseDisconnect();
-    }
-    private void chooseFromCombo()
-    {
-
-        album.setAlbumName(albumComboBox.getValue());
-        album.setUser(user);
-
-        DBConnector con = new DBConnector();
-        con.databaseConnect();
-        con.setSession(con.getFactory().getCurrentSession()) ;
-        con.getSession().beginTransaction();
-
-        AlbumRepo albumRepo = new AlbumRepo();
-        album=albumRepo.findByName(album,con);
-
-        photo.setAlbum(album);
-        con.databaseDisconnect();
-    }
 
     public void setUser(User user) { this.user = user; }
+
+
 }

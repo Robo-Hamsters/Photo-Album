@@ -1,5 +1,6 @@
 package Model;
 
+import Controller.Services.TransactionHandler;
 import Repo.DBConnector;
 import Repo.PhotoRepo;
 import javafx.stage.FileChooser;
@@ -9,8 +10,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.UUID;
 
-public class FileManager {
+public class FileManager extends TransactionHandler {
     private File file;
+    private Photo inputFile;
 
     public File getFile() {
         return file;
@@ -34,7 +36,31 @@ public class FileManager {
     }
 
     public void saveFile(Photo inputFile) throws IOException {
-        /*File outputFolder =new File(albumsDirectory+"/"+albumName);
+
+        this.inputFile = inputFile;
+
+        byte[] imageBytes = new byte[(int)file.length()];
+        try{
+            FileInputStream input = new FileInputStream(file);
+            input.read(imageBytes);
+            input.close();
+            this.inputFile.setImage(imageBytes);
+        }catch(Exception e){
+
+        }
+
+        this.inputFile.setIdPhoto(UUID.randomUUID());
+        createTransaction();
+    }
+
+    @Override
+    public void task(DBConnector con) {
+        PhotoRepo repo=new PhotoRepo();
+        repo.dbInsertPhoto(inputFile,con);
+
+    }
+}
+ /*File outputFolder =new File(albumsDirectory+"/"+albumName);
         if(!outputFolder.exists())
             outputFolder.mkdirs();
 
@@ -53,20 +79,3 @@ public class FileManager {
         input.close();
         output.close();
 */
-        byte[] imageBytes = new byte[(int)file.length()];
-        try{
-            FileInputStream input = new FileInputStream(file);
-            input.read(imageBytes);
-            input.close();
-            inputFile.setImage(imageBytes);
-        }catch(Exception e){
-
-        }
-        DBConnector con= new DBConnector();
-        con.databaseConnect();
-        inputFile.setIdPhoto(UUID.randomUUID());
-        PhotoRepo repo=new PhotoRepo();
-        repo.dbInsertPhoto(inputFile,con);
-        con.databaseDisconnect();
-    }
-}

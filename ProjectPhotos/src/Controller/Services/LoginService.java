@@ -5,31 +5,34 @@ import Repo.DBConnector;
 import Repo.UserRepo;
 
 
-public class LoginService {
+public class LoginService extends TransactionHandler {
 
 
     private   User returnedUser;
+    private  User user;
 
     public  boolean loginUser(User user)
     {
-        DBConnector con=new DBConnector();
-        con.databaseConnect();
-        con.setSession(con.getFactory().getCurrentSession()) ;
-        con.getSession().beginTransaction();
+        this.user = user;
+        createTransaction();
 
-
-        UserRepo userRepo=new UserRepo();
-        returnedUser = userRepo.findUserByUsernameAndPassword(user,con);
-
-        con.databaseDisconnect();
 
         return (returnedUser != null);
 
 
     }
 
+
     public  User getReturnedUser()
     {
         return returnedUser;
+    }
+
+    @Override
+    public void task(DBConnector con) {
+        UserRepo userRepo=new UserRepo();
+        returnedUser = userRepo.findUserByUsernameAndPassword(user,con);
+
+
     }
 }

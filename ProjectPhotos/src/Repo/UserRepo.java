@@ -28,13 +28,10 @@ public class UserRepo {
                 returnUser.setName((String)columns[2]);
                 returnUser.setUserid((UUID) columns[3]);
             }
-            con.databaseDisconnect();
             return returnUser;
         }
     public void dbInsertUser(User user,DBConnector con)
     {
-        con.setSession(con.getFactory().getCurrentSession()) ;
-        con.getSession().beginTransaction();
         con.getSession().save(user);
         con.getSession().getTransaction().commit();
     }
