@@ -1,7 +1,9 @@
 package Controller.Services;
 
+import Model.Album;
 import Model.Photo;
 import Model.User;
+import Repo.AlbumRepo;
 import Repo.DBConnector;
 import Repo.PhotoRepo;
 
@@ -11,19 +13,36 @@ public class AlbumService extends TransactionHandler {
 
    private User user;
    private List<Photo> photos;
+   private List<Album> albums;
 
-    public List<Photo> retrievePhotos(User user)
+    public AlbumService(User user)
     {
         this.user = user;
         createTransaction();
 
-        return photos;
+    }
+
+    public List<Photo> getPhotos() { return photos; }
+
+    public void setPhotos(List<Photo> photos) {
+        this.photos = photos;
+    }
+
+    public List<Album> getAlbums() {
+        return albums;
+    }
+
+    public void setAlbums(List<Album> albums) {
+        this.albums = albums;
     }
 
     @Override
     public void task(DBConnector con) {
+
         PhotoRepo photoRepo = new PhotoRepo();
+        AlbumRepo albumRepo = new AlbumRepo();
 
         photos = photoRepo.findByUser(user, con);
+        albums = albumRepo.findByUser(user, con);
     }
 }

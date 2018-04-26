@@ -52,7 +52,7 @@ public class LoginController {
             window.setResizable(true);
             controller.setLabelTextUsername(login.getReturnedUser().getName());
             controller.setUser(login.getReturnedUser());
-            controller.loadImageView();
+            controller.loadImageView("All");
             loader.setController(controller);
             window.show();
             setProgressIndicatorOFF();

@@ -1,6 +1,7 @@
 package Controller;
 
 import Controller.Services.*;
+import Model.Album;
 import Model.Photo;
 import Model.User;
 import javafx.event.ActionEvent;
@@ -10,7 +11,9 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -19,6 +22,8 @@ import java.util.List;
 
 public class AlbumController {
 
+    @FXML
+    private ListView<Album> albumListView;
 
     @FXML
     private Label labelUsername;
@@ -33,8 +38,12 @@ public class AlbumController {
 
     private List<Photo> photos;
 
+    public void setUpAlbumController()
+    {
 
-    public void loadImageView() {
+    }
+
+    public void loadImageView(String albumName) {
         img_tilepane.getChildren().clear();
         img_tilepane.setVgap(15);
         img_tilepane.setHgap(15);
@@ -42,16 +51,42 @@ public class AlbumController {
         img_tilepane.setTileAlignment(Pos.TOP_LEFT);
         scrl_pane.setFitToWidth(true);
         scrl_pane.setFitToHeight(true);
+        albumListView.getItems().clear();
+        albumListView.getItems().add(new Album("All"));
 
-        AlbumService service = new AlbumService();
+        AlbumService service = new AlbumService(user);
 
-        photos = service.retrievePhotos(user);
-
-
-        for (final Photo photo : photos) {
-            img_tilepane.getChildren().addAll(GenerateAlbumService.createTilePaneImageView(photo));
-
+        photos = service.getPhotos();
+        for(Album album : service.getAlbums())
+        {
+            albumListView.getItems().add(album);
         }
+
+        if(albumName.equals("All"))
+        {
+            for (final Photo photo : photos) {
+                img_tilepane.getChildren().add(GenerateAlbumService.createTilePaneImageView(photo));
+            }
+        }
+        else
+        {
+            for (final Photo photo : photos) {
+                if(photo.getAlbum().getAlbumName().equals(albumName))
+                {
+                    img_tilepane.getChildren().add(GenerateAlbumService.createTilePaneImageView(photo));
+                }
+            }
+        }
+
+
+    }
+
+    @FXML
+    public void displayByAlbum(MouseEvent event)
+    {
+
+        loadImageView(albumListView.getSelectionModel().getSelectedItem().getAlbumName());
+
     }
 
     @FXML
@@ -69,7 +104,7 @@ public class AlbumController {
         imageUploadOpen.getStylesheets().add(ImageUploadController.class.getResource("../UI/Styles/ImageUploadForm.css").toExternalForm());
         stage.setResizable(false);
         stage.showAndWait();
-        loadImageView();
+        loadImageView("All");
     }
 
     @FXML
@@ -87,6 +122,7 @@ public class AlbumController {
         controller.setUser(user);
         loader.setController(controller);
         stage.showAndWait();
+        loadImageView("All");
     }
 
 

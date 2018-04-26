@@ -65,6 +65,7 @@ public class Photo {
     }
     public void setLatitude(double latitude) { this.latitude = latitude; }
     public void setLongitude(double longitude) { this.longitude = longitude; }
+    public Photo(){this.album = new Album();}
 
     public Date getDateTime() {
         return dateTime;
@@ -160,10 +161,7 @@ public class Photo {
         this.dateTime = dateTime;
         this.model = model;
     }
-    public Photo()
-    {
 
-    }
     public Photo(String namePhoto) {
         this.namePhoto = namePhoto;
     }

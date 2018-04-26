@@ -2,7 +2,9 @@
     -fx-background-color: #000c18;
 }
 
-.button {
+.button,
+.list-view,
+.list-cell {
     /* -fx-background-color:  #000c18; */
     -fx-text-fill: #fff;
     -fx-font-family: "Arial Narrow";
@@ -12,9 +14,11 @@
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 
-.button:hover {
+.button:hover,
+.list-cell:hover{
     -fx-background-color: linear-gradient(#2a5058, #61a2b1);
 }
+
 
 .label {
     -fx-text-fill: #fff;
