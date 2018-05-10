@@ -5,6 +5,8 @@ import Controller.Services.ImageUploadService;
 import Model.Album;
 import Model.FileManager;
 import Model.User;
+import Repo.AlbumRepo;
+import Repo.DBConnector;
 import Repo.LocationParser;
 import Model.Photo;
 import javafx.event.ActionEvent;
@@ -15,6 +17,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ImageUploadController {
@@ -34,7 +38,7 @@ public class ImageUploadController {
 
     private  User user;
 
-    private Album album;
+    private List<Album> album = new ArrayList<>();
 
     private FileManager image;
 
@@ -56,9 +60,6 @@ public class ImageUploadController {
             photo.readImageMetadata(image.getFile());
 
             String metadata = "Date-time:\n" + photo.getDateTime()+"\nSize: "+String.format("%.3f", photo.getSize())+" MB\nGPS: ";
-
-
-
 
             if(photo.hasLocation()) {
                 LocationParser gpsLocation = new LocationParser(photo.getLatitude(), photo.getLongitude());
@@ -92,15 +93,35 @@ public class ImageUploadController {
     @FXML
     private void imageUpload(ActionEvent event) throws IOException {
 
-            album = new Album();
+
             Album returnAlbum = new Album();
-            album.setAlbumName(albumComboBox.getValue());
-            album.setUser(user);
-
             ImageUploadService service = new ImageUploadService();
-            returnAlbum = service.chooseFromCombo(album);
+            try {
+                returnAlbum = service.chooseFromCombo(new Album(albumComboBox.getValue()));
+                returnAlbum.setUser(user);
 
-            photo.setAlbum(returnAlbum);
+
+            }catch (NullPointerException e)
+            {
+
+            }
+            AlbumRepo albumRepo = new AlbumRepo();
+            DBConnector con = new DBConnector();
+
+            album.addAll(service.createAlbumsFromMetadata(photo));
+
+            for(Album album : album)
+            {
+                con.databaseConnect();
+                con.setSession(con.getFactory().getCurrentSession());
+                con.getSession().beginTransaction();
+                photo.getAlbums().add(album.getAlbumName());
+                albumRepo.dbInsertAlbum(album,con);
+                con.databaseDisconnect();
+
+            }
+            album.add(returnAlbum);
+
             photo.setUser(user);
             image.saveFile(photo);
 

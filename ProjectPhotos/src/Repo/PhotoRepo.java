@@ -1,5 +1,6 @@
 package Repo;
 
+import Model.Album;
 import Model.Photo;
 import Model.User;
 import org.hibernate.query.Query;
@@ -8,6 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PhotoRepo {
+
+    public List<Photo> findByAlbum(String album, DBConnector con)
+    {
+        List<Photo> photos = new ArrayList<>();
+        Query<Photo> query = con.getSession().createQuery("from Photo where :frmAlbum in(albums)");
+        query.setParameter("frmAlbum",album);
+
+        photos = query.list();
+        return photos;
+    }
+
 
     public List<Photo> findById(Photo photo,DBConnector con)
     {
@@ -55,23 +67,6 @@ public class PhotoRepo {
         return returnPhoto;
 
     }
-   /* public Photo dbSelectPhoto(DBConnector con)
-    {
-
-        Query query=con.getSession().createQuery("SELECT image from Photo where :frmuserid=user.userid");
-
-        query.setParameter("frmuserid",photo);
-
-        List list=query.list();
-        Photo returnPhoto=null;
-        if(list.size() != 0)
-        {
-            returnPhoto = new Photo();
-            byte[] bytes =(byte[])list.get(0);
-            returnPhoto.setImage(bytes);
-        }
-        return returnPhoto;
-    }*/
 
     public void dbInsertPhoto(Photo photo, DBConnector con)
     {

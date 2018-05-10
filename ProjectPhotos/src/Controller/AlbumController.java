@@ -38,10 +38,8 @@ public class AlbumController {
 
     private List<Photo> photos;
 
-    public void setUpAlbumController()
-    {
+    private  List<Album> albums;
 
-    }
 
     public void loadImageView(String albumName) {
         img_tilepane.getChildren().clear();
@@ -56,7 +54,10 @@ public class AlbumController {
 
         AlbumService service = new AlbumService(user);
 
-        photos = service.getPhotos();
+
+        this.albums = service.getAlbums();
+        this.photos = service.getPhotos();
+
         for(Album album : service.getAlbums())
         {
             albumListView.getItems().add(album);
@@ -71,12 +72,13 @@ public class AlbumController {
         else
         {
             for (final Photo photo : photos) {
-                if(photo.getAlbum().getAlbumName().equals(albumName))
+                if(photo.getAlbums().contains(albumName))
                 {
                     img_tilepane.getChildren().add(GenerateAlbumService.createTilePaneImageView(photo));
                 }
             }
         }
+
 
 
     }
@@ -134,6 +136,7 @@ public class AlbumController {
         this.labelUsername.setText("Welcome "+Username+"!");
     }
     public void setUser(User user) { this.user = user; }
-
+    public List<Album> getAlbums() { return albums; }
+    public void setAlbums(List<Album> albums) { this.albums = albums; }
 
 }

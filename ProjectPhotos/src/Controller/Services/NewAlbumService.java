@@ -22,6 +22,7 @@ public class NewAlbumService extends TransactionHandler{
     {
         this.albumName = albumName;
         this.user = user;
+
         createTransaction();
     }
 
@@ -32,6 +33,7 @@ public class NewAlbumService extends TransactionHandler{
         Album album = new Album("");
         Album returnAlbum;
         album.setAlbumName(albumName);
+        album.setAutoGenerate(false);
         album.setUser(user);
         returnAlbum = albumRepo.findByName(album,con);
 

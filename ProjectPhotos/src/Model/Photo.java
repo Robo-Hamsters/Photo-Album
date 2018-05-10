@@ -9,8 +9,7 @@ import com.drew.metadata.exif.GpsDirectory;
 
 import javax.persistence.*;
 import java.io.*;
-import java.util.Date;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table(name = "Photos")
@@ -39,18 +38,14 @@ public class Photo {
     @Column (name="Image")
     private byte[] image;
 
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="userid",referencedColumnName = "userid")
     User user;
 
+    @Column (name="albums")
+    @ElementCollection (targetClass = String.class)
+    private List<String> albums = new ArrayList<>();
 
-    @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="albumID",referencedColumnName = "albumID")
-    Album album;
-
-    public Album getAlbum() { return album; }
-
-    public void setAlbum(Album album) { this.album = album; }
     public void setIdPhoto(UUID idPhoto) { this.idPhoto = idPhoto; }
     public void setCountry(String country) { this.country = country; }
     public void setCity(String city) { this.city = city; }
@@ -65,7 +60,9 @@ public class Photo {
     }
     public void setLatitude(double latitude) { this.latitude = latitude; }
     public void setLongitude(double longitude) { this.longitude = longitude; }
-    public Photo(){this.album = new Album();}
+    public Photo(){};
+    public List<String> getAlbums() { return albums; }
+    public void setAlbums(List<String> albums) { this.albums = albums; }
 
     public Date getDateTime() {
         return dateTime;

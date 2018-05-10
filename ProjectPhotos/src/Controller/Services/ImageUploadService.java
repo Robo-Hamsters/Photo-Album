@@ -1,8 +1,13 @@
 package Controller.Services;
 
 import Model.Album;
+import Model.Photo;
 import Repo.AlbumRepo;
 import Repo.DBConnector;
+
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ImageUploadService extends TransactionHandler {
 
@@ -11,12 +16,21 @@ public class ImageUploadService extends TransactionHandler {
     public Album chooseFromCombo(Album album)
     {
         this.album = album;
-
         createTransaction();
-
         return this.album;
 
     }
+
+    public List<Album> createAlbumsFromMetadata(Photo photo)
+    {
+        List<Album> returnAlbums = new ArrayList<>();
+
+        returnAlbums.add(new Album(photo.getCountry(), true));
+        returnAlbums.add(new Album(photo.getModel(), true));
+
+        return returnAlbums;
+    }
+
 
     @Override
     public void task(DBConnector con) {

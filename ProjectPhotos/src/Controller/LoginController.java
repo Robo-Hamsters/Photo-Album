@@ -2,8 +2,10 @@ package Controller;
 
 
 import Authentication.EncryptService;
+import Controller.Services.GenerateAlbumService;
 import Controller.Services.LoginService;
 import Model.User;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

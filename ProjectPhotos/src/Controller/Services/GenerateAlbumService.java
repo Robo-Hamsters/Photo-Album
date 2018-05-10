@@ -88,7 +88,8 @@ public class GenerateAlbumService extends TransactionHandler {
 
         for(Album album : listAlbum)
         {
-            albumStr.add(album.getAlbumName());
+            if(!album.isAutoGenerate())
+                albumStr.add(album.getAlbumName());
         }
         albumNames.setItems(FXCollections.observableArrayList(albumStr));
 

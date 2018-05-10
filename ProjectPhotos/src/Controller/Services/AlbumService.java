@@ -23,17 +23,8 @@ public class AlbumService extends TransactionHandler {
     }
 
     public List<Photo> getPhotos() { return photos; }
-
-    public void setPhotos(List<Photo> photos) {
-        this.photos = photos;
-    }
-
     public List<Album> getAlbums() {
         return albums;
-    }
-
-    public void setAlbums(List<Album> albums) {
-        this.albums = albums;
     }
 
     @Override
