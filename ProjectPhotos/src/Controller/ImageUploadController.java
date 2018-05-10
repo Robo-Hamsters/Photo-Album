@@ -108,7 +108,7 @@ public class ImageUploadController {
             AlbumRepo albumRepo = new AlbumRepo();
             DBConnector con = new DBConnector();
 
-            album.addAll(service.createAlbumsFromMetadata(photo));
+            album.addAll(service.createAlbumsFromMetadata(photo,user));
 
             for(Album album : album)
             {
@@ -120,7 +120,9 @@ public class ImageUploadController {
                 con.databaseDisconnect();
 
             }
-            album.add(returnAlbum);
+
+            photo.getAlbums().add(returnAlbum.getAlbumName());
+
 
             photo.setUser(user);
             image.saveFile(photo);

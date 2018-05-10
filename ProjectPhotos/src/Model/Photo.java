@@ -43,7 +43,7 @@ public class Photo {
     User user;
 
     @Column (name="albums")
-    @ElementCollection (targetClass = String.class)
+    @ElementCollection (targetClass = String.class,fetch=FetchType.EAGER)
     private List<String> albums = new ArrayList<>();
 
     public void setIdPhoto(UUID idPhoto) { this.idPhoto = idPhoto; }

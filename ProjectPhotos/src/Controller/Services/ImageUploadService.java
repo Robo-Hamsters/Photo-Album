@@ -2,6 +2,7 @@ package Controller.Services;
 
 import Model.Album;
 import Model.Photo;
+import Model.User;
 import Repo.AlbumRepo;
 import Repo.DBConnector;
 
@@ -21,12 +22,13 @@ public class ImageUploadService extends TransactionHandler {
 
     }
 
-    public List<Album> createAlbumsFromMetadata(Photo photo)
+    public List<Album> createAlbumsFromMetadata(Photo photo, User user)
     {
         List<Album> returnAlbums = new ArrayList<>();
-
-        returnAlbums.add(new Album(photo.getCountry(), true));
-        returnAlbums.add(new Album(photo.getModel(), true));
+        if(!photo.getCountry().isEmpty())
+        returnAlbums.add(new Album(photo.getCountry(), true, user));
+        if(!photo.getModel().isEmpty())
+        returnAlbums.add(new Album(photo.getModel(), true, user));
 
         return returnAlbums;
     }

@@ -43,6 +43,13 @@ public class Album {
         this.albumName = albumName;
         this.autoGenerate = autoGenerate;
     }
+    public Album(String albumName, boolean autoGenerate,User user)
+    {
+        this.albumID = UUID.randomUUID();
+        this.albumName = albumName;
+        this.autoGenerate = autoGenerate;
+        this.user = user;
+    }
     public void setAlbumID(UUID albumID) {
         this.albumID = albumID;
     }

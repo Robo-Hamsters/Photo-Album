@@ -3,6 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="c6123880-6768-43ca-ba05-fe00a9a21ca3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/.idea/workspace.xml" afterPath="$PROJECT_DIR$/ProjectPhotos/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Controller/AlbumController$1.class" afterPath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Controller/AlbumController$1.class" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Controller/AlbumController.class" afterPath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Controller/AlbumController.class" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Controller/ImageUploadController.class" afterPath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Controller/ImageUploadController.class" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Controller/LoginController.class" afterPath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Controller/LoginController.class" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Model/Album.class" afterPath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Model/Album.class" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Model/Photo.class" afterPath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Model/Photo.class" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Repo/PhotoRepo.class" afterPath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/Repo/PhotoRepo.class" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/UI/AlbumForm.fxml" afterPath="$PROJECT_DIR$/ProjectPhotos/out/production/ProjectPhotos/UI/AlbumForm.fxml" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/src/Controller/AlbumController.java" afterPath="$PROJECT_DIR$/ProjectPhotos/src/Controller/AlbumController.java" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/src/Controller/ImageUploadController.java" afterPath="$PROJECT_DIR$/ProjectPhotos/src/Controller/ImageUploadController.java" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/src/Controller/LoginController.java" afterPath="$PROJECT_DIR$/ProjectPhotos/src/Controller/LoginController.java" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/src/Model/Album.java" afterPath="$PROJECT_DIR$/ProjectPhotos/src/Model/Album.java" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/src/Model/Photo.java" afterPath="$PROJECT_DIR$/ProjectPhotos/src/Model/Photo.java" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/src/Repo/PhotoRepo.java" afterPath="$PROJECT_DIR$/ProjectPhotos/src/Repo/PhotoRepo.java" />
+      <change beforePath="$PROJECT_DIR$/ProjectPhotos/src/UI/AlbumForm.fxml" afterPath="$PROJECT_DIR$/ProjectPhotos/src/UI/AlbumForm.fxml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -98,8 +114,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -107,11 +124,21 @@
               <item name="Photo-Album" type="b2602c69:ProjectViewProjectNode" />
               <item name="Photo-Album" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Photo-Album" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Photo-Album" type="462c0819:PsiDirectoryNode" />
+              <item name="ProjectPhotos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Photo-Album" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Photo-Album" type="462c0819:PsiDirectoryNode" />
+              <item name="ProjectPhotos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -235,6 +262,8 @@
       <workItem from="1524159029116" duration="19000" />
       <workItem from="1524159115228" duration="39000" />
       <workItem from="1524159215935" duration="16000" />
+      <workItem from="1524175103100" duration="21000" />
+      <workItem from="1524673506060" duration="64000" />
     </task>
     <task id="LOCAL-00001" summary="hhhhh">
       <created>1522257278711</created>
@@ -247,10 +276,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1136000" />
+    <option name="totallyTimeSpent" value="1221000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="244" y="-8" width="1327" height="780" extended-state="6" />
+    <frame x="41" y="-4" width="1325" height="772" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -259,8 +288,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -270,8 +299,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -296,6 +325,70 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ProjectPhotos/src/Model/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjectPhotos/src/Repo/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjectPhotos/src/Model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjectPhotos/src/Model/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjectPhotos/src/Model/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjectPhotos/src/Repo/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjectPhotos/src/Model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjectPhotos/src/Model/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ProjectPhotos/src/Model/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
