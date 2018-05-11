@@ -15,6 +15,8 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import java.io.ByteArrayInputStream;
@@ -68,6 +70,45 @@ public class GenerateAlbumService extends TransactionHandler {
                         Scene scene = new Scene(borderPane, Color.BLACK);
                         newStage.setScene(scene);
                         newStage.show();
+
+
+                        String webmapHtml = "<!DOCTYPE html>\n" +
+                                "<html>\n" +
+                                "<head>\n" +
+                                "<meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\" />\n" +
+                                "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"/>\n" +
+                                "<style>html,body{height:100%;margin:0;padding:0;}#map_canvas{height:100%;}</style>\n" +
+                                "<script type=\"text/javascript\" src=\"https://maps.googleapis.com/maps/api/js?sensor=false\"></script>\n" +
+                                "<script type=\"text/javascript\">\n" +
+                                "function initialise() {\n" +
+                                "    var options = { zoom:13, mapTypeId:google.maps.MapTypeId.SATELLITE, center:new google.maps.LatLng("+photo.getLatitude()+","+photo.getLongitude()+")};\n" +
+                                "    var map = new google.maps.Map(document.getElementById('map_canvas'), options);\n" +
+                                "    var marker;\n" +
+                                "\tmarker = new google.maps.Marker({\n" +
+                                "\t\tposition:new google.maps.LatLng("+photo.getLatitude()+","+photo.getLongitude()+"), map:map, title:\"\"});\n" +
+                                "\t\tgoogle.maps.event.addListener(marker, 'click', function() { document.location = \"\"; });\n" +
+                                "}\n" +
+                                "</script>\n" +
+                                "</head>\n" +
+                                "<body onload=\"initialise()\">\n" +
+                                "<div id=\"map_canvas\"></div>\n" +
+                                "</body>\n" +
+                                "</html>";
+                        Stage mapStage = new Stage();
+                        mapStage.setWidth(400);
+                        mapStage.setHeight(400);
+                        mapStage.setTitle("Map");
+                        BorderPane mapBorderPane = new BorderPane();
+
+                        WebView browser = new WebView();
+                        WebEngine webEngine = browser.getEngine();
+                        webEngine.loadContent(webmapHtml);
+
+                        mapBorderPane.setCenter(browser);
+
+                        Scene mapScene = new Scene(mapBorderPane, Color.BLACK);
+                        mapStage.setScene(mapScene);
+                        mapStage.show();
                     }
                 }
 

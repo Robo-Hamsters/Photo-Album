@@ -94,7 +94,7 @@ public class ImageUploadController {
     private void imageUpload(ActionEvent event) throws IOException {
 
 
-            Album returnAlbum = new Album();
+            Album returnAlbum = null;
             ImageUploadService service = new ImageUploadService();
             try {
                 returnAlbum = service.chooseFromCombo(new Album(albumComboBox.getValue()));
@@ -115,12 +115,18 @@ public class ImageUploadController {
                 con.databaseConnect();
                 con.setSession(con.getFactory().getCurrentSession());
                 con.getSession().beginTransaction();
+
                 photo.getAlbums().add(album.getAlbumName());
-                albumRepo.dbInsertAlbum(album,con);
+                if(albumRepo.findByName(album,con) == null) {
+
+                    albumRepo.dbInsertAlbum(album, con);
+                }
                 con.databaseDisconnect();
+
 
             }
 
+            if(returnAlbum != null)
             photo.getAlbums().add(returnAlbum.getAlbumName());
 
 

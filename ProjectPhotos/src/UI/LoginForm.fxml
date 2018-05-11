@@ -32,7 +32,7 @@
                   <Font size="14.0" />
                </font></PasswordField>
             <Hyperlink fx:id="forgotP" layoutX="14.0" layoutY="161.0" onAction="#forgotPass" text="Forgot your password?" underline="true" />
-            <Button fx:id="btnSignIn" layoutX="52.0" layoutY="215.0" mnemonicParsing="false" onAction="#signIn" prefHeight="29.0" prefWidth="91.0" text="Log In">
+            <Button fx:id="btnSignIn" defaultButton="true" layoutX="52.0" layoutY="215.0" mnemonicParsing="false" onAction="#signIn" prefHeight="29.0" prefWidth="91.0" text="Log In">
                <font>
                   <Font size="13.0" />
                </font></Button>

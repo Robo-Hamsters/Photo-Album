@@ -28,13 +28,13 @@ public class Photo {
     @Column (name="Size")
     private double size = 0.0;
     @Column (name="Country")
-    private String country = "";
+    private String country = new String();
     @Column (name="City")
     private String city = "";
     @Column (name="Date")
     private Date dateTime;
     @Column (name="Model")
-    private String model="";
+    private String model= new String();
     @Column (name="Image")
     private byte[] image;
 

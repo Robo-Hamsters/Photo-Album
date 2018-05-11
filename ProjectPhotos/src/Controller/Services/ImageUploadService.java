@@ -25,9 +25,9 @@ public class ImageUploadService extends TransactionHandler {
     public List<Album> createAlbumsFromMetadata(Photo photo, User user)
     {
         List<Album> returnAlbums = new ArrayList<>();
-        if(!photo.getCountry().isEmpty())
+        if(!(photo.getCountry() == null))
         returnAlbums.add(new Album(photo.getCountry(), true, user));
-        if(!photo.getModel().isEmpty())
+        if(!(photo.getModel() == null))
         returnAlbums.add(new Album(photo.getModel(), true, user));
 
         return returnAlbums;
