@@ -1,6 +1,7 @@
 package Controller;
 
 import Controller.Services.NewAlbumService;
+import Model.Album;
 import Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,7 +27,12 @@ public class NewAlbumController {
         stage = (Stage) source.getScene().getWindow();
         service.setController(this);
 
-        service.createNewAlbum(textAlbumName.getText(),user);
+        Album album = new Album();
+        album.setAlbumName(textAlbumName.getText());
+        album.setUser(user);
+        album.setAutoGenerate(false);
+
+        service.createNewAlbum(album);
 
 
 

@@ -11,37 +11,29 @@ import java.util.UUID;
 
 public class NewAlbumService extends TransactionHandler{
 
-    private String albumName;
 
-    private User user;
+    private Album returnAlbum;
+
+    private Album album;
 
 
     private NewAlbumController controller;
 
-    public void createNewAlbum(String albumName, User user)
+    public void createNewAlbum(Album album)
     {
-        this.albumName = albumName;
-        this.user = user;
-
+        this.album = album;
         createTransaction();
+
     }
 
-
-    @Override
-    public void task(DBConnector con) {
-        AlbumRepo albumRepo = new AlbumRepo();
-        Album album = new Album("");
-        Album returnAlbum;
-        album.setAlbumName(albumName);
-        album.setAutoGenerate(false);
-        album.setUser(user);
-        returnAlbum = albumRepo.findByName(album,con);
-
+    private boolean checkValidNames()
+    {
+        boolean isValid = false;
         if (returnAlbum == null)
         {
             album.setAlbumID(UUID.randomUUID());
 
-            if(albumName.equals("All"))
+            if(album.getAlbumName().equals("All"))
             {
                 Alert alert=new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Tuxedo View");
@@ -50,9 +42,9 @@ public class NewAlbumService extends TransactionHandler{
 
 
             }
-            else if(!albumName.isEmpty())
+            else if(!album.getAlbumName().isEmpty())
             {
-                albumRepo.dbInsertAlbum(album, con);
+                isValid = true;
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Tuxedo View");
                 alert.setContentText("You create an album");
@@ -77,6 +69,27 @@ public class NewAlbumService extends TransactionHandler{
             alert.showAndWait();
 
         }
+        return isValid;
+    }
+
+
+    @Override
+    public void task(DBConnector con) {
+        AlbumRepo albumRepo = new AlbumRepo();
+        returnAlbum = albumRepo.findByName(album,con);
+
+        if(returnAlbum == null)
+        {
+            if(album.isAutoGenerate())
+            {
+                albumRepo.dbInsertAlbum(album, con);
+            }
+            else if(checkValidNames()){
+                albumRepo.dbInsertAlbum(album, con);
+            }
+
+        }
+
 
     }
     public NewAlbumController getController() { return controller; }

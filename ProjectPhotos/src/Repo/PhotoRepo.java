@@ -1,10 +1,8 @@
 package Repo;
 
-import Model.Album;
 import Model.Photo;
 import Model.User;
 import org.hibernate.query.Query;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,16 +53,22 @@ public class PhotoRepo {
         query.setParameter("frmuserid",user.getUserid());
 
         List<Object[]> list=query.list();
-        List<Photo> returnPhoto = null;
+        List<Photo> returnPhoto = new ArrayList<>();
         if(list.size() != 0)
         {
-            returnPhoto = new ArrayList<>();
             for(Object[] obj : list)
             {
                 returnPhoto.add((Photo)obj[0]);
             }
         }
         return returnPhoto;
+
+    }
+
+    public void dbDeletePhoto(Photo photo, DBConnector con)
+    {
+        con.getSession().delete(photo);
+        con.getSession().getTransaction().commit();
 
     }
 

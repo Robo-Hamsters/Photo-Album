@@ -17,31 +17,24 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-
 public class AlbumController {
-
     @FXML
     private ListView<Album> albumListView;
-
     @FXML
     private Label labelUsername;
-
     @FXML
     private TilePane img_tilepane;
-
     @FXML
     private ScrollPane scrl_pane;
-
     private User user;
+    private List<Photo> photos = new ArrayList<>();
+    private List<Album> albums = new ArrayList<>();
 
-    private List<Photo> photos;
-
-    private  List<Album> albums;
-
-
-    public void loadImageView(String albumName) {
+    public void loadImageView(String albumName)
+    {
         img_tilepane.getChildren().clear();
         img_tilepane.setVgap(15);
         img_tilepane.setHgap(15);
@@ -52,33 +45,24 @@ public class AlbumController {
         albumListView.getItems().clear();
         albumListView.getItems().add(new Album("All"));
 
-        AlbumService service = new AlbumService(user);
-
-
-        this.albums = service.getAlbums();
-        this.photos = service.getPhotos();
-
-        for(Album album : service.getAlbums())
-        {
-            albumListView.getItems().add(album);
-        }
-
-        if(albumName.equals("All"))
-        {
-            for (final Photo photo : photos) {
-                img_tilepane.getChildren().add(GenerateAlbumService.createTilePaneImageView(photo));
+        if(albums.size() > 1) {
+            for (Album album : albums) {
+                albumListView.getItems().add(album);
             }
         }
-        else
-        {
-            for (final Photo photo : photos) {
-                if(photo.getAlbums().contains(albumName))
-                {
-                    img_tilepane.getChildren().add(GenerateAlbumService.createTilePaneImageView(photo));
+        if(photos.size() > 0) {
+            if (albumName.equals("All")) {
+                for (final Photo photo : photos) {
+                    img_tilepane.getChildren().add(AlbumService.createTilePaneImageView(photo));
+                }
+            } else {
+                for (final Photo photo : photos) {
+                    if (photo.getAlbums().contains(albumName)) {
+                        img_tilepane.getChildren().add(AlbumService.createTilePaneImageView(photo));
+                    }
                 }
             }
         }
-
 
 
     }
@@ -86,9 +70,7 @@ public class AlbumController {
     @FXML
     public void displayByAlbum(MouseEvent event)
     {
-
         loadImageView(albumListView.getSelectionModel().getSelectedItem().getAlbumName());
-
     }
 
     @FXML
@@ -100,19 +82,20 @@ public class AlbumController {
         ImageUploadController controller=loader.getController();
         controller.setUser(user);
         loader.setController(loader);
+        controller.setAlbum(albums);
         Stage stage = new Stage();
         stage.setTitle("Upload Image");
         stage.setScene(new Scene(imageUploadOpen));
         imageUploadOpen.getStylesheets().add(ImageUploadController.class.getResource("../UI/Styles/ImageUploadForm.css").toExternalForm());
         stage.setResizable(false);
         stage.showAndWait();
+        retriveDBData();
         loadImageView("All");
     }
 
     @FXML
     public void openNewAlbumForm(ActionEvent event) throws IOException
     {
-
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(getClass().getResource("../UI/NewAlbumForm.fxml"));
         Parent newAlbum=loader.load();
@@ -124,12 +107,19 @@ public class AlbumController {
         controller.setUser(user);
         loader.setController(controller);
         stage.showAndWait();
+        retriveDBData();
         loadImageView("All");
     }
 
 
     public Label getLabelUsername() {
         return labelUsername;
+    }
+    public void retriveDBData() {
+
+        AlbumService service = new AlbumService(user);
+        this.albums = service.getAlbums();
+        this.photos = service.getPhotos();
     }
 
     public void setLabelTextUsername(String Username) {
@@ -138,5 +128,4 @@ public class AlbumController {
     public void setUser(User user) { this.user = user; }
     public List<Album> getAlbums() { return albums; }
     public void setAlbums(List<Album> albums) { this.albums = albums; }
-
 }

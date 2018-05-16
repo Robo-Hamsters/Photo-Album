@@ -2,10 +2,8 @@ package Controller;
 
 
 import Authentication.EncryptService;
-import Controller.Services.GenerateAlbumService;
 import Controller.Services.LoginService;
 import Model.User;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,6 +52,7 @@ public class LoginController {
             window.setResizable(true);
             controller.setLabelTextUsername(login.getReturnedUser().getName());
             controller.setUser(login.getReturnedUser());
+            controller.retriveDBData();
             controller.loadImageView("All");
             loader.setController(controller);
             window.show();
@@ -68,7 +67,6 @@ public class LoginController {
             setProgressIndicatorOFF();
 
         }
-
     }
 
     public void openSignUpForm(ActionEvent event) throws IOException

@@ -13,9 +13,10 @@ import java.net.URLConnection;
 public class LocationParser
 {
     private JSONObject responce;
-    private String country;
-    private String city;
+    private String country = "";
+    private String city = "";
     private double latitude;
+    private double longitude;
 
     public LocationParser(double latitude, double longitude) {
         this.latitude = latitude;
@@ -34,7 +35,6 @@ public class LocationParser
         return city;
     }
 
-    private double longitude;
 
     public  void retriveLocation()
     {
@@ -58,9 +58,7 @@ public class LocationParser
                 {
                     country = results.getJSONObject(results.length()-1).getString("formatted_address");
                     city = results.getJSONObject(3).getJSONArray("address_components").getJSONObject(0).getString("long_name");
-
                 }
-
             }
         } catch (FileNotFoundException e) {
         } catch (IOException e) {

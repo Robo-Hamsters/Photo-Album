@@ -1,14 +1,13 @@
 package Controller;
 
-import Controller.Services.GenerateAlbumService;
 import Controller.Services.ImageUploadService;
+import Controller.Services.NewAlbumService;
 import Model.Album;
 import Model.FileManager;
 import Model.User;
-import Repo.AlbumRepo;
-import Repo.DBConnector;
 import Repo.LocationParser;
 import Model.Photo;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -16,6 +15,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+
+import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,15 +34,11 @@ public class ImageUploadController {
     private Label lbl_metadata;
     @FXML
     private ComboBox<String> albumComboBox;
-
     private Photo photo;
-
     private  User user;
-
+    private  List<Album> albumsCombo =new ArrayList<>();
     private List<Album> album = new ArrayList<>();
-
     private FileManager image;
-
 
     @FXML
     private void selectImage(ActionEvent event) {
@@ -51,7 +48,6 @@ public class ImageUploadController {
 
             Image imageObj = new Image(image.getFile().toURI().toString());
             imageViewer.setImage(imageObj);
-
             tBox_tagImg.disableProperty().setValue(false);
             btn_upload.disableProperty().setValue(false);
             albumComboBox.disableProperty().setValue(false);
@@ -65,13 +61,11 @@ public class ImageUploadController {
                 LocationParser gpsLocation = new LocationParser(photo.getLatitude(), photo.getLongitude());
                 photo.setCity(gpsLocation.getCity());
                 photo.setCountry(gpsLocation.getCountry());
-                metadata += photo.getLongitude()+" "+photo.getLatitude()+"\nLocation: ";
-
+                metadata += photo.getLongitude()+" "+photo.getLatitude();
             }
-
             else
-                metadata += "No GPS info!\n";
-
+                metadata += "No GPS info!";
+            metadata += "\nLocation: ";
             if(photo.hasCountry())
                 metadata +=photo.getCountry();
             else
@@ -84,51 +78,35 @@ public class ImageUploadController {
 
             lbl_metadata.setText(metadata);
 
-            GenerateAlbumService generateAlbumService = new GenerateAlbumService();
-            generateAlbumService.fillComboBox(albumComboBox,user);
+            List<String> albumStr = new ArrayList<>();
 
+            for(Album album : albumsCombo)
+            {
+                if(!album.isAutoGenerate())
+                    albumStr.add(album.getAlbumName());
+            }
+            albumComboBox.setItems(FXCollections.observableArrayList(albumStr));
         }
     }
 
     @FXML
     private void imageUpload(ActionEvent event) throws IOException {
-
-
             Album returnAlbum = null;
             ImageUploadService service = new ImageUploadService();
-            try {
+            NewAlbumService newAlbumService = new NewAlbumService();
+            if(albumComboBox.getValue() != null) {
                 returnAlbum = service.chooseFromCombo(new Album(albumComboBox.getValue()));
                 returnAlbum.setUser(user);
-
-
-            }catch (NullPointerException e)
-            {
-
             }
-            AlbumRepo albumRepo = new AlbumRepo();
-            DBConnector con = new DBConnector();
-
             album.addAll(service.createAlbumsFromMetadata(photo,user));
-
             for(Album album : album)
             {
-                con.databaseConnect();
-                con.setSession(con.getFactory().getCurrentSession());
-                con.getSession().beginTransaction();
-
                 photo.getAlbums().add(album.getAlbumName());
-                if(albumRepo.findByName(album,con) == null) {
-
-                    albumRepo.dbInsertAlbum(album, con);
-                }
-                con.databaseDisconnect();
-
-
+                newAlbumService.createNewAlbum(album);
             }
 
             if(returnAlbum != null)
             photo.getAlbums().add(returnAlbum.getAlbumName());
-
 
             photo.setUser(user);
             image.saveFile(photo);
@@ -145,6 +123,13 @@ public class ImageUploadController {
 
 
     public void setUser(User user) { this.user = user; }
+    public List<Album> getAlbum() {
+        return albumsCombo;
+    }
+
+    public void setAlbum(List<Album> album) {
+        this.albumsCombo = album;
+    }
 
 
 }

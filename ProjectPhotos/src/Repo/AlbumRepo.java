@@ -14,6 +14,11 @@ public class AlbumRepo {
         con.getSession().save(album);
         con.getSession().getTransaction().commit();
     }
+    public void dbDeleteAlbum(Album album, DBConnector con)
+    {
+        con.getSession().delete(album);
+
+    }
     public List<Album> findByUser(User user, DBConnector con)
     {
         Query query= con.getSession().createQuery("from Album a inner join User u on a.user.userid = u.userid where a.user.userid = :frmuserid");
