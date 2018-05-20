@@ -45,7 +45,7 @@ public class AlbumController {
         albumListView.getItems().clear();
         albumListView.getItems().add(new Album("All"));
 
-        if(albums.size() > 1) {
+        if(albums.size() > 0) {
             for (Album album : albums) {
                 albumListView.getItems().add(album);
             }
@@ -63,8 +63,6 @@ public class AlbumController {
                 }
             }
         }
-
-
     }
 
     @FXML
@@ -111,21 +109,16 @@ public class AlbumController {
         loadImageView("All");
     }
 
-
-    public Label getLabelUsername() {
-        return labelUsername;
-    }
-    public void retriveDBData() {
-
+    public void retriveDBData()
+    {
         AlbumService service = new AlbumService(user);
         this.albums = service.getAlbums();
         this.photos = service.getPhotos();
     }
-
     public void setLabelTextUsername(String Username) {
         this.labelUsername.setText("Welcome "+Username+"!");
     }
-    public void setUser(User user) { this.user = user; }
-    public List<Album> getAlbums() { return albums; }
-    public void setAlbums(List<Album> albums) { this.albums = albums; }
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

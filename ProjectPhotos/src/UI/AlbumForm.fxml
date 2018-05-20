@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="518.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AlbumController">
    <children>
-      <Label fx:id="labelUsername" layoutX="74.0" layoutY="28.0" prefHeight="17.0" prefWidth="725.0" text="" textFill="WHITE" />
+      <Label fx:id="labelUsername" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="725.0" text="" textFill="WHITE" />
       <Button fx:id="btn_upload" layoutX="816.0" layoutY="69.0" mnemonicParsing="false" onAction="#openImageUploadForm" prefHeight="44.0" prefWidth="46.0" text="+" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="69.0">
          <font>
             <Font size="20.0" />

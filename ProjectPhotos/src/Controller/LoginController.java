@@ -1,6 +1,5 @@
 package Controller;
 
-
 import Authentication.EncryptService;
 import Controller.Services.LoginService;
 import Model.User;
@@ -16,8 +15,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-
-
 public class LoginController {
 
     @FXML
@@ -26,7 +23,6 @@ public class LoginController {
     private TextField textLoginPswd;
     @FXML
     private ProgressIndicator progressIndicator;
-
 
     public void signIn(ActionEvent event) throws IOException
     {
@@ -65,7 +61,6 @@ public class LoginController {
             alert.setContentText("Wrong email or password");
             alert.showAndWait();
             setProgressIndicatorOFF();
-
         }
     }
 

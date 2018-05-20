@@ -23,7 +23,6 @@ public class NewAlbumService extends TransactionHandler{
     {
         this.album = album;
         createTransaction();
-
     }
 
     private boolean checkValidNames()

@@ -36,7 +36,6 @@ public class AlbumService extends TransactionHandler {
     {
         this.user = user;
         createTransaction();
-
     }
 
     public List<Photo> getPhotos() { return photos; }
@@ -55,7 +54,7 @@ public class AlbumService extends TransactionHandler {
     }
     public static ImageView createTilePaneImageView(Photo photo)
     {
-        ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(photo.getImage()),150, 105,true,true));
+        ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(photo.getThumbnail()),150, 105,true,true));
         imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -158,11 +157,8 @@ public class AlbumService extends TransactionHandler {
                         mapStage.show();
                     }
                 }
-
-
             }
         });
         return imageView;
-
     }
 }

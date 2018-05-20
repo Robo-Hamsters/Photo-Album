@@ -15,11 +15,7 @@ public class LoginService extends TransactionHandler {
     {
         this.user = user;
         createTransaction();
-
-
         return (returnedUser != null);
-
-
     }
 
 
@@ -32,7 +28,5 @@ public class LoginService extends TransactionHandler {
     public void task(DBConnector con) {
         UserRepo userRepo=new UserRepo();
         returnedUser = userRepo.findUserByUsernameAndPassword(user,con);
-
-
     }
 }

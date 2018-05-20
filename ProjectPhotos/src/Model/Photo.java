@@ -41,12 +41,16 @@ public class Photo {
     private String model = "";
     @Column (name="Image")
     private byte[] image;
+    @Column (name="Thumbnail")
+    private byte[] thumbnail;
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="userid",referencedColumnName = "userid")
     private User user;
     @Column (name="albums")
     @ElementCollection (targetClass = String.class,fetch=FetchType.EAGER)
     private List<String> albums = new ArrayList<>();
+
+    public Photo(){};
 
     public void setIdPhoto(UUID idPhoto) { this.idPhoto = idPhoto; }
     public void setCountry(String country) { this.country = country; }
@@ -62,9 +66,16 @@ public class Photo {
     }
     public void setLatitude(double latitude) { this.latitude = latitude; }
     public void setLongitude(double longitude) { this.longitude = longitude; }
-    public Photo(){};
-    public List<String> getAlbums() { return albums; }
-    public void setAlbums(List<String> albums) { this.albums = albums; }
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+    public void setAlbums(List<String> albums) { this.albums = albums == null ? new ArrayList<>() :  albums; }
+    public void setNamePhoto(String namePhoto) {
+        this.namePhoto = namePhoto;
+    }
+    public void setThumbnail(byte[] thumbnail) {
+        this.thumbnail = thumbnail;
+    }
 
     public Date getDateTime() {
         return dateTime;
@@ -82,21 +93,17 @@ public class Photo {
     public byte[] getImage() {
         return image;
     }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
+    public List<String> getAlbums() { return albums; }
     public UUID getIdPhoto() {
         return idPhoto;
     }
-
     public String getNamePhoto() {
         return namePhoto;
     }
-
-    public void setNamePhoto(String namePhoto) {
-        this.namePhoto = namePhoto;
+    public byte[] getThumbnail() {
+        return thumbnail;
     }
+
     public boolean hasModel()
     {
         if(model.isEmpty())
@@ -132,8 +139,8 @@ public class Photo {
             GpsDirectory gpsDirectory = metadata.getFirstDirectoryOfType(GpsDirectory.class);
 
             if (exifDirectory != null) {
-                dateTime = exifDirectory.getDate(0x132);
-                model = exifDirectory.getString(0x110);
+                setDateTime(exifDirectory.getDate(0x132));
+                setModel(exifDirectory.getString(0x110));
             }
             if(dateTime==null && exifSubIFDDirectory!=null)
             {
@@ -165,7 +172,7 @@ public class Photo {
         this.model = model;
     }
 
-    public static void generateThumbnail(File file)
+    public void generateThumbnail(File file)
     {
         BufferedImage original;
         try {
@@ -196,7 +203,14 @@ public class Photo {
             if(x < 0 || y < 0)
                 throw new IllegalArgumentException("Width of thumbnail is bigger");
             BufferedImage thumbnailImage = resizedImage.getSubimage(x, y, thumbnailWidth, thumbnailWidth);
-            ImageIO.write(thumbnailImage, "JPG", new File("./asdasd.jpg"));
+
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ImageIO.write( thumbnailImage, "jpg", baos );
+            baos.flush();
+            thumbnail = baos.toByteArray();
+            baos.close();
+
+            //ImageIO.write(thumbnailImage, "JPG", new File("./asdasd.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }

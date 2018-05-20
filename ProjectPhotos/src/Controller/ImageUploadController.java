@@ -1,6 +1,8 @@
 package Controller;
 
+import Controller.Services.CountryAlbumCreator;
 import Controller.Services.ImageUploadService;
+import Controller.Services.ModelAlbumCreator;
 import Controller.Services.NewAlbumService;
 import Model.Album;
 import Model.FileManager;
@@ -98,6 +100,10 @@ public class ImageUploadController {
                 returnAlbum = service.chooseFromCombo(new Album(albumComboBox.getValue()));
                 returnAlbum.setUser(user);
             }
+
+            service.registerSmartAlbumCreator(new ModelAlbumCreator());
+            service.registerSmartAlbumCreator(new CountryAlbumCreator());
+
             album.addAll(service.createAlbumsFromMetadata(photo,user));
             for(Album album : album)
             {
@@ -106,8 +112,9 @@ public class ImageUploadController {
             }
 
             if(returnAlbum != null)
-            photo.getAlbums().add(returnAlbum.getAlbumName());
-
+            {
+                photo.getAlbums().add(returnAlbum.getAlbumName());
+            }
             photo.setUser(user);
             image.saveFile(photo);
 
