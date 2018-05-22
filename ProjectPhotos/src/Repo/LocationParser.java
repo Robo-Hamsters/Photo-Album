@@ -35,21 +35,18 @@ public  class LocationParser {
                 responce = new JSONObject(inputLine);
                 JSONArray results = responce.getJSONArray("results");
 
-                for(int i = 0; i<results.length(); i++)
-                {
-                    if(results.getJSONObject(i).getJSONArray("types").getString(0).equals("country"))
-                    {
+                for(int i = 0; i<results.length(); i++) {
+                    if (results.getJSONObject(i).getJSONArray("types").getString(0).equals("country")) {
                         country = results.getJSONObject(i).getString("formatted_address");
                     }
 
-                    if(results.getJSONObject(i).getJSONArray("types").getString(0).equals("locality"))
-                    {
+                    if (results.getJSONObject(i).getJSONArray("types").getString(0).equals("locality")) {
+                        city = results.getJSONObject(i).getJSONArray("address_components").getJSONObject(0).getString("long_name");
+                    } else if (results.getJSONObject(i).getJSONArray("types").getString(0).equals("administrative_area_level_5")) {
                         city = results.getJSONObject(i).getJSONArray("address_components").getJSONObject(0).getString("long_name");
                     }
                 }
 
-                //country = results.getJSONObject(results.length()-1).getString("formatted_address");
-                //city = results.getJSONObject(3).getJSONArray("address_components").getJSONObject(0).getString("long_name");
             }
         } catch (FileNotFoundException e) {
         } catch (IOException | JSONException e) {
