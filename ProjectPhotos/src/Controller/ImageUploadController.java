@@ -4,11 +4,8 @@ import Controller.Services.CountryAlbumCreator;
 import Controller.Services.ImageUploadService;
 import Controller.Services.ModelAlbumCreator;
 import Controller.Services.NewAlbumService;
-import Model.Album;
-import Model.FileManager;
-import Model.User;
+import Model.*;
 import Repo.LocationParser;
-import Model.Photo;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -55,7 +52,11 @@ public class ImageUploadController {
             albumComboBox.disableProperty().setValue(false);
 
             photo = new Photo();
-            photo.readImageMetadata(image.getFile());
+            photo = MetaExtractor.readImageMetadata(image.getFile());
+            ThumbnailGenerator generator = new ThumbnailGenerator();
+            generator.generateThumbnail(image.getFile());
+            photo.setThumbnail(generator.getThumbnail());
+
 
             String metadata = "Date-time:\n" + photo.getDateTime()+"\nSize: "+String.format("%.3f", photo.getSize())+" MB\nGPS: ";
 
