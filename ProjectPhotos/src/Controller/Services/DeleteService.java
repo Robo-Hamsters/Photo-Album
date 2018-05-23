@@ -1,6 +1,7 @@
 package Controller.Services;
 
 import Model.Photo;
+import Repo.AlbumRepo;
 import Repo.DBConnector;
 import Repo.PhotoRepo;
 
@@ -17,7 +18,15 @@ public class DeleteService extends TransactionHandler {
     public void task(DBConnector con) {
 
         PhotoRepo photoRepo = new PhotoRepo();
-        photoRepo.dbDeletePhoto(photo,con);
+        AlbumRepo albumRepo = new AlbumRepo();
 
+
+        for(String album: photo.getAlbums()) {
+            if(photoRepo.findByAlbum(album, con).size() <= 1)
+            {
+                albumRepo.dbDeleteAlbumByName(album,con);
+            }
+        }
+        photoRepo.dbDeletePhoto(photo,con);
     }
 }

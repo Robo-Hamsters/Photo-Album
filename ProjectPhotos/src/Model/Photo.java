@@ -1,15 +1,8 @@
 package Model;
 
-import com.drew.imaging.ImageMetadataReader;
-import com.drew.imaging.ImageProcessingException;
-import com.drew.metadata.Metadata;
-import com.drew.metadata.exif.ExifIFD0Directory;
-import com.drew.metadata.exif.ExifSubIFDDirectory;
-import com.drew.metadata.exif.GpsDirectory;
+
 import javax.persistence.*;
-import java.io.*;
 import java.util.*;
-import java.util.List;
 
 @Entity
 @Table(name = "Photos")
@@ -48,9 +41,15 @@ public class Photo {
 
     public Photo(){};
 
-    public void setIdPhoto(UUID idPhoto) { this.idPhoto = idPhoto; }
-    public void setCountry(String country) { this.country = country; }
-    public void setCity(String city) { this.city = city; }
+    public void setIdPhoto(UUID idPhoto) {
+        this.idPhoto = idPhoto;
+    }
+    public void setCountry(String country) {
+        this.country = country;
+    }
+    public void setCity(String city) {
+        this.city = city;
+    }
     public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }

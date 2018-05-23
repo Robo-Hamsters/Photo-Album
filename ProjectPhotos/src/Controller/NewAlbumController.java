@@ -27,15 +27,8 @@ public class NewAlbumController {
         stage = (Stage) source.getScene().getWindow();
         service.setController(this);
 
-        Album album = new Album();
-        album.setAlbumName(textAlbumName.getText());
-        album.setUser(user);
-        album.setAutoGenerate(false);
-
+        Album album = new Album(textAlbumName.getText(), false, user);
         service.createNewAlbum(album);
-
-
-
     }
 
     public User getUser() { return user; }

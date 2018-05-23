@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
@@ -29,6 +30,8 @@ public class AlbumController {
     private TilePane img_tilepane;
     @FXML
     private ScrollPane scrl_pane;
+    @FXML
+    private Button delete_btn;
     private User user;
     private List<Photo> photos = new ArrayList<>();
     private List<Album> albums = new ArrayList<>();
@@ -50,15 +53,18 @@ public class AlbumController {
                 albumListView.getItems().add(album);
             }
         }
+        AlbumService service = new AlbumService(user, this);
         if(photos.size() > 0) {
             if (albumName.equals("All")) {
+                delete_btn.setDisable(true);
                 for (final Photo photo : photos) {
-                    img_tilepane.getChildren().add(AlbumService.createTilePaneImageView(photo));
+                    img_tilepane.getChildren().add(service.createTilePaneImageView(photo));
                 }
             } else {
+                delete_btn.setDisable(false);
                 for (final Photo photo : photos) {
                     if (photo.getAlbums().contains(albumName)) {
-                        img_tilepane.getChildren().add(AlbumService.createTilePaneImageView(photo));
+                        img_tilepane.getChildren().add(service.createTilePaneImageView(photo));
                     }
                 }
             }
@@ -109,9 +115,18 @@ public class AlbumController {
         loadImageView("All");
     }
 
+    @FXML
+    public  void deleteAlbum(ActionEvent event )
+    {
+        DeleteAlbumService service = new DeleteAlbumService();
+        service.deteleItem(albumListView.getSelectionModel().getSelectedItem());
+        retriveDBData();
+        loadImageView("All");
+    }
+
     public void retriveDBData()
     {
-        AlbumService service = new AlbumService(user);
+        AlbumService service = new AlbumService(user,this);
         this.albums = service.getAlbums();
         this.photos = service.getPhotos();
     }

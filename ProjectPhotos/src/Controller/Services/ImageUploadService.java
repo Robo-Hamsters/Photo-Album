@@ -2,6 +2,7 @@ package Controller.Services;
 
 import Model.Album;
 import Model.Photo;
+import Model.SmartAlbum.SmartAlbumCreator;
 import Model.User;
 import Repo.AlbumRepo;
 import Repo.DBConnector;
@@ -13,7 +14,7 @@ public class ImageUploadService extends TransactionHandler {
 
     private Album album;
 
-    private List<SmartAlbumCreator> countryAlbumCreators = new ArrayList<>();
+    private List<SmartAlbumCreator> albumCreators = new ArrayList<>();
 
     private NewAlbumService newAlbumService = new NewAlbumService();
 
@@ -25,13 +26,13 @@ public class ImageUploadService extends TransactionHandler {
     }
 
     public void registerSmartAlbumCreator(SmartAlbumCreator creator) {
-        countryAlbumCreators.add(creator);
+        albumCreators.add(creator);
     }
     public List<Album> createAlbumsFromMetadata(Photo photo, User user)
     {
         List<String> albumNames = new ArrayList<>();
         List<Album> albums = new ArrayList<>();
-        for (SmartAlbumCreator creator: countryAlbumCreators) {
+        for (SmartAlbumCreator creator: albumCreators) {
             String name = creator.getAlbumName(photo);
             if (!name.isEmpty()) {
                 photo.getAlbums().add(name);
@@ -45,13 +46,6 @@ public class ImageUploadService extends TransactionHandler {
             newAlbumService.createNewAlbum(alb);
         }
         return albums;
-//        if(photo.hasCountry())
-//            returnAlbums.add(new Album(photo.getCountry(), true, user));
-//
-//        if(photo.hasModel())
-//            returnAlbums.add(new Album(photo.getModel(), true, user));
-//
-//        return returnAlbums;
     }
 
 

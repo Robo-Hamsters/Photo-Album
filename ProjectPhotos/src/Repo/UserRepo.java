@@ -30,8 +30,8 @@ public class UserRepo {
             }
             return returnUser;
         }
-    public void dbInsertUser(User user,DBConnector con)
-    {
+
+    public void dbInsertUser(User user,DBConnector con) {
         con.getSession().save(user);
         con.getSession().getTransaction().commit();
     }

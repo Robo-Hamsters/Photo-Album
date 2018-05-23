@@ -32,6 +32,7 @@
          </content>
       </ScrollPane>
       <Button fx:id="btnCreateAlbum" layoutX="14.0" layoutY="478.0" mnemonicParsing="false" onAction="#openNewAlbumForm" prefHeight="26.0" prefWidth="160.0" text="Create new Album" AnchorPane.bottomAnchor="14.0" />
-      <ListView fx:id="albumListView" layoutX="14.0" layoutY="69.0" onMouseClicked="#displayByAlbum" prefHeight="402.0" prefWidth="160.0" AnchorPane.bottomAnchor="47.0" AnchorPane.topAnchor="69.0" />
+      <ListView fx:id="albumListView" layoutX="14.0" layoutY="69.0" onMouseClicked="#displayByAlbum" prefHeight="278.0" prefWidth="160.0" AnchorPane.bottomAnchor="171.0" AnchorPane.topAnchor="69.0" />
+      <Button fx:id="delete_btn" layoutX="14.0" layoutY="445.0" mnemonicParsing="false" onAction="#deleteAlbum" prefHeight="26.0" prefWidth="160.0" text="Delete Album" />
    </children>
 </AnchorPane>

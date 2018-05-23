@@ -1,11 +1,12 @@
 package Controller;
 
-import Controller.Services.CountryAlbumCreator;
-import Controller.Services.ImageUploadService;
-import Controller.Services.ModelAlbumCreator;
-import Controller.Services.NewAlbumService;
+import Controller.Services.*;
 import Model.*;
-import Repo.LocationParser;
+import Model.Services.LocationParser;
+import Model.Services.FileManager;
+import Model.Services.MetaExtractor;
+import Model.Services.ThumbnailGenerator;
+import Model.SmartAlbum.*;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +16,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,9 +41,11 @@ public class ImageUploadController {
 
     @FXML
     private void selectImage(ActionEvent event) {
+
         image = new FileManager();
         image.chooseImage();
-        if (image.getFile() != null) {
+
+        if (image.hasFile()) {
 
             Image imageObj = new Image(image.getFile().toURI().toString());
             imageViewer.setImage(imageObj);
@@ -51,35 +53,11 @@ public class ImageUploadController {
             btn_upload.disableProperty().setValue(false);
             albumComboBox.disableProperty().setValue(false);
 
-            photo = new Photo();
             photo = MetaExtractor.readImageMetadata(image.getFile());
             ThumbnailGenerator generator = new ThumbnailGenerator();
             generator.generateThumbnail(image.getFile());
             photo.setThumbnail(generator.getThumbnail());
 
-
-            String metadata = "Date-time:\n" + photo.getDateTime()+"\nSize: "+String.format("%.3f", photo.getSize())+" MB\nGPS: ";
-
-            if(photo.hasLocation()) {
-                LocationParser gpsLocation = new LocationParser(photo.getLatitude(), photo.getLongitude());
-                photo.setCity(gpsLocation.getCity());
-                photo.setCountry(gpsLocation.getCountry());
-                metadata += photo.getLongitude()+" "+photo.getLatitude();
-            }
-            else
-                metadata += "No GPS info!";
-            metadata += "\nLocation: ";
-            if(photo.hasCountry())
-                metadata +=photo.getCountry();
-            else
-                metadata += "No locational Data!";
-
-            if(photo.hasModel())
-                metadata += "\nModel: "+photo.getModel();
-            else
-                metadata += "\nModel: No model found!";
-
-            lbl_metadata.setText(metadata);
 
             List<String> albumStr = new ArrayList<>();
 
@@ -94,9 +72,9 @@ public class ImageUploadController {
 
     @FXML
     private void imageUpload(ActionEvent event) throws IOException {
+
             Album returnAlbum = null;
             ImageUploadService service = new ImageUploadService();
-            NewAlbumService newAlbumService = new NewAlbumService();
             if(albumComboBox.getValue() != null) {
                 returnAlbum = service.chooseFromCombo(new Album(albumComboBox.getValue()));
                 returnAlbum.setUser(user);
@@ -104,13 +82,10 @@ public class ImageUploadController {
 
             service.registerSmartAlbumCreator(new ModelAlbumCreator());
             service.registerSmartAlbumCreator(new CountryAlbumCreator());
+            service.registerSmartAlbumCreator(new CityAlbumCreator());
+            service.registerSmartAlbumCreator(new DateAlbumCreator());
 
             album.addAll(service.createAlbumsFromMetadata(photo,user));
-            for(Album album : album)
-            {
-                photo.getAlbums().add(album.getAlbumName());
-                newAlbumService.createNewAlbum(album);
-            }
 
             if(returnAlbum != null)
             {
@@ -120,8 +95,8 @@ public class ImageUploadController {
             image.saveFile(photo);
 
 
-        Node source = (Node)event.getSource();
-        Stage stage = (Stage)source.getScene().getWindow();
+            Node source = (Node)event.getSource();
+            Stage stage = (Stage)source.getScene().getWindow();
 
         stage.close();
     }

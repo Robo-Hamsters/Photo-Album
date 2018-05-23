@@ -26,7 +26,6 @@ public class LoginController {
 
     public void signIn(ActionEvent event) throws IOException
     {
-        setProgressIndicatorON();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../UI/AlbumForm.fxml"));
         Parent albumOpen = loader.load();
@@ -34,11 +33,7 @@ public class LoginController {
         albumOpen.getStylesheets().add(AlbumController.class.getResource("../UI/Styles/AlbumForm.css").toExternalForm());
 
         AlbumController controller=loader.getController();
-
-        User user = new User();
-        user.setEmail(textLoginEmail.getText());
-        user.setPassword(EncryptService.encryptPassword(textLoginPswd.getText()));
-
+        User user = new User(textLoginEmail.getText(), EncryptService.encryptPassword(textLoginPswd.getText()));
         LoginService login = new LoginService();
 
         if(login.loginUser(user)) {
@@ -52,7 +47,6 @@ public class LoginController {
             controller.loadImageView("All");
             loader.setController(controller);
             window.show();
-            setProgressIndicatorOFF();
         }
         else
         {
@@ -60,7 +54,6 @@ public class LoginController {
             alert.setTitle("Tuxedo View");
             alert.setContentText("Wrong email or password");
             alert.showAndWait();
-            setProgressIndicatorOFF();
         }
     }
 
@@ -88,15 +81,6 @@ public class LoginController {
         forgotPassLoader.getStylesheets().add(ForgotPassController.class.getResource("../UI/Styles/ForgotPassForm.css").toExternalForm());
         stage.showAndWait();
     }
-
-    public void setProgressIndicatorON(){
-            progressIndicator.setVisible(true);
-    }
-
-    public void setProgressIndicatorOFF(){
-        progressIndicator.setVisible(false);
-    }
-
 }
 
 

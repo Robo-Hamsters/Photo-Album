@@ -17,8 +17,6 @@ import java.util.UUID;
 
 public class SignupController  {
 
-    ValidationService service = new ValidationService();
-
     @FXML
     private TextField textName;
     @FXML
@@ -29,23 +27,17 @@ public class SignupController  {
     private TextField textConPassword;
 
     private User user;
+    private ValidationService service = new ValidationService();
 
     @FXML
     public void createAccount(ActionEvent event)
     {
         if(service.checkValidation(textName, textEmail, textPassword, textConPassword))
         {
-            user=new User();
-            user.setName(textName.getText());
-            user.setEmail(textEmail.getText());
-            user.setUserid(UUID.randomUUID());
-            user.setEmail(textEmail.getText());
-            user.setPassword(EncryptService.encryptPassword(textPassword.getText()));
+            user=new User(UUID.randomUUID(), textName.getText(), textEmail.getText(), EncryptService.encryptPassword(textPassword.getText()));
 
             SignUpService signUpService = new SignUpService();
-
             signUpService.createUser(user);
-
 
             Node source = (Node)event.getSource();
             Stage stage = (Stage)source.getScene().getWindow();

@@ -17,6 +17,14 @@ public class AlbumRepo {
     public void dbDeleteAlbum(Album album, DBConnector con)
     {
         con.getSession().delete(album);
+        con.getSession().getTransaction().commit();
+
+    }
+    public void dbDeleteAlbumByName(String albumName, DBConnector con)
+    {
+        Query query= con.getSession().createQuery("delete from Album a where a.albumName = :frmAlbumName");
+        query.setParameter("frmAlbumName",albumName);
+        con.getSession().getTransaction().commit();
 
     }
     public List<Album> findByUser(User user, DBConnector con)

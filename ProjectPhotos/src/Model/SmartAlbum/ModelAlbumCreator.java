@@ -1,4 +1,4 @@
-package Controller.Services;
+package Model.SmartAlbum;
 
 import Model.Photo;
 

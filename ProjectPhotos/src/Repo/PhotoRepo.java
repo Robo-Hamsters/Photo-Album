@@ -11,7 +11,7 @@ public class PhotoRepo {
     public List<Photo> findByAlbum(String album, DBConnector con)
     {
         List<Photo> photos = new ArrayList<>();
-        Query<Photo> query = con.getSession().createQuery("from Photo where :frmAlbum in(albums)");
+        Query<Photo> query = con.getSession().createQuery("from Photo p where :frmAlbum in (albums)");
         query.setParameter("frmAlbum",album);
 
         photos = query.list();

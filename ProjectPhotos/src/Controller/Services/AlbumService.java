@@ -1,5 +1,6 @@
 package Controller.Services;
 
+import Controller.AlbumController;
 import Model.Album;
 import Model.Photo;
 import Model.User;
@@ -29,12 +30,14 @@ import java.util.List;
 public class AlbumService extends TransactionHandler {
 
    private User user;
+   private  AlbumController controller ;
    private List<Photo> photos = new ArrayList<>();
    private List<Album> albums = new ArrayList<>();
 
-    public AlbumService(User user)
+    public AlbumService(User user, AlbumController controller)
     {
         this.user = user;
+        this.controller = controller;
         createTransaction();
     }
 
@@ -52,7 +55,7 @@ public class AlbumService extends TransactionHandler {
         photos = photoRepo.findByUser(user, con);
         albums = albumRepo.findByUser(user, con);
     }
-    public static ImageView createTilePaneImageView(Photo photo)
+    public ImageView createTilePaneImageView(Photo photo)
     {
         ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(photo.getThumbnail()),150, 105,true,true));
         imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -60,6 +63,7 @@ public class AlbumService extends TransactionHandler {
             public void handle(MouseEvent mouseEvent) {
 
                 Stage stage = new Stage();
+                Stage mapStage = new Stage();
 
                 if(mouseEvent.getButton().equals(MouseButton.PRIMARY))
                 {
@@ -93,6 +97,12 @@ public class AlbumService extends TransactionHandler {
                             public void handle(ActionEvent event) {
                                 DeleteService service = new DeleteService();
                                 service.deteleItem(photo);
+                                controller.retriveDBData();
+                                controller.loadImageView("All");
+                                newStage.close();
+                                mapStage.close();
+
+
                             }
                         });
                         detailsItem.setOnAction(new EventHandler<ActionEvent>() {
@@ -140,7 +150,7 @@ public class AlbumService extends TransactionHandler {
                                 "<div id=\"map_canvas\"></div>\n" +
                                 "</body>\n" +
                                 "</html>";
-                        Stage mapStage = new Stage();
+
                         mapStage.setWidth(400);
                         mapStage.setHeight(400);
                         mapStage.setTitle("Map");
