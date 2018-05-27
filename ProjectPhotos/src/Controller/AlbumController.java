@@ -10,10 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
@@ -32,6 +30,9 @@ public class AlbumController {
     private ScrollPane scrl_pane;
     @FXML
     private Button delete_btn;
+    @FXML
+    private MenuBar myMenuBar;
+    private Album album;
     private User user;
     private List<Photo> photos = new ArrayList<>();
     private List<Album> albums = new ArrayList<>();
@@ -53,18 +54,17 @@ public class AlbumController {
                 albumListView.getItems().add(album);
             }
         }
-        AlbumService service = new AlbumService(user, this);
         if(photos.size() > 0) {
             if (albumName.equals("All")) {
                 delete_btn.setDisable(true);
                 for (final Photo photo : photos) {
-                    img_tilepane.getChildren().add(service.createTilePaneImageView(photo));
+                    img_tilepane.getChildren().add(AlbumService.createTilePaneImageView(photo, this));
                 }
             } else {
                 delete_btn.setDisable(false);
                 for (final Photo photo : photos) {
                     if (photo.getAlbums().contains(albumName)) {
-                        img_tilepane.getChildren().add(service.createTilePaneImageView(photo));
+                        img_tilepane.getChildren().add(AlbumService.createTilePaneImageView(photo, this));
                     }
                 }
             }
@@ -74,6 +74,7 @@ public class AlbumController {
     @FXML
     public void displayByAlbum(MouseEvent event)
     {
+        album = albumListView.getSelectionModel().getSelectedItem();
         loadImageView(albumListView.getSelectionModel().getSelectedItem().getAlbumName());
     }
 
@@ -119,17 +120,62 @@ public class AlbumController {
     public  void deleteAlbum(ActionEvent event )
     {
         DeleteAlbumService service = new DeleteAlbumService();
-        service.deteleItem(albumListView.getSelectionModel().getSelectedItem());
+        service.deteleItem(album);
         retriveDBData();
         loadImageView("All");
     }
 
     public void retriveDBData()
     {
-        AlbumService service = new AlbumService(user,this);
+        AlbumService service = new AlbumService(user);
         this.albums = service.getAlbums();
         this.photos = service.getPhotos();
     }
+
+    @FXML
+    public void signOut(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../UI/LoginForm.fxml"));
+        Parent signin = loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("Tuxedo View");
+        stage.setScene(new Scene(signin));
+        signin.getStylesheets().add(SignupController.class.getResource("../UI/Styles/LoginForm.css").toExternalForm());
+        stage.setResizable(false);
+        Stage stageCurrent = (Stage) myMenuBar.getScene().getWindow();
+        stageCurrent.close();
+        stage.show();
+
+    }
+    @FXML
+    public void settings(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../UI/SettingsForm.fxml"));
+        Parent settings = loader.load();
+        SettingsController controller = loader.getController();
+        Stage stage = new Stage();
+        stage.setTitle("Tuxedo View");
+        stage.setScene(new Scene(settings));
+        settings.getStylesheets().add(SignupController.class.getResource("../UI/Styles/SettingsForm.css").toExternalForm());
+        stage.setResizable(false);
+        controller.setUser(user);
+        loader.setController(controller);
+        stage.show();
+    }
+    @FXML
+    public void about(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../UI/AboutForm.fxml"));
+        Parent settings = loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("Tuxedo View");
+        stage.setScene(new Scene(settings));
+        settings.getStylesheets().add(SignupController.class.getResource("../UI/Styles/AboutForm.css").toExternalForm());
+        stage.setResizable(false);
+        stage.show();
+
+    }
+
     public void setLabelTextUsername(String Username) {
         this.labelUsername.setText("Welcome "+Username+"!");
     }

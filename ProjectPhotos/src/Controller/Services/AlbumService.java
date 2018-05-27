@@ -30,14 +30,12 @@ import java.util.List;
 public class AlbumService extends TransactionHandler {
 
    private User user;
-   private  AlbumController controller ;
    private List<Photo> photos = new ArrayList<>();
    private List<Album> albums = new ArrayList<>();
 
-    public AlbumService(User user, AlbumController controller)
+    public AlbumService(User user)
     {
         this.user = user;
-        this.controller = controller;
         createTransaction();
     }
 
@@ -52,10 +50,11 @@ public class AlbumService extends TransactionHandler {
         PhotoRepo photoRepo = new PhotoRepo();
         AlbumRepo albumRepo = new AlbumRepo();
 
+
         photos = photoRepo.findByUser(user, con);
         albums = albumRepo.findByUser(user, con);
     }
-    public ImageView createTilePaneImageView(Photo photo)
+    public static ImageView createTilePaneImageView(Photo photo, AlbumController controller)
     {
         ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(photo.getThumbnail()),150, 105,true,true));
         imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -96,6 +95,8 @@ public class AlbumService extends TransactionHandler {
                             @Override
                             public void handle(ActionEvent event) {
                                 DeleteService service = new DeleteService();
+                                controller.retriveDBData();
+                                controller.loadImageView("All");
                                 service.deteleItem(photo);
                                 controller.retriveDBData();
                                 controller.loadImageView("All");

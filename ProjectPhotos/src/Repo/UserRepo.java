@@ -36,5 +36,14 @@ public class UserRepo {
         con.getSession().getTransaction().commit();
     }
 
+    public void editUser(User user, DBConnector con)
+    {
+        Query query = con.getSession().createQuery("update User set name = :frmusername , password = :frmpassword where userid = :frmuserid");
+        query.setParameter("frmusername", user.getName());
+        query.setParameter("frmpassword", user.getPassword());
+        query.setParameter("frmuserid",user.getUserid());
+        con.getSession().getTransaction().commit();
+    }
+
 
 }

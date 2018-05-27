@@ -26,6 +26,7 @@ public class AlbumRepo {
         query.setParameter("frmAlbumName",albumName);
         con.getSession().getTransaction().commit();
 
+
     }
     public List<Album> findByUser(User user, DBConnector con)
     {

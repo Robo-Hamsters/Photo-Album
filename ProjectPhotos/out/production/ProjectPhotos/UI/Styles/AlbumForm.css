@@ -1,11 +1,10 @@
 .root {
-    -fx-background-color: #000c18;
+    -fx-background-image:url("bef95d5a-cb7e-4c3a-9936-b1dbe62c25d8.jpg") ;
 }
 
 .button,
 .list-view,
 .list-cell {
-    /* -fx-background-color:  #000c18; */
     -fx-text-fill: #fff;
     -fx-font-family: "Arial Narrow";
     -fx-font-size: 13px;
@@ -20,17 +19,45 @@
     -fx-border-color:#2a5058;
     -fx-border-radius: 0px;
     -fx-border-width: 0px 0px 0px 2px;
-   /* -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );*/
 }
 
 
 .label {
     -fx-text-fill: #fff;
-    -fx-font-size: 30px;
+    -fx-font-size: 25px;
 }
 
 #btn_upload,
 #btn_delete {
     -fx-font-size: 20px;
     -fx-background-radius: 50px;
+}
+.menu-bar{
+    -fx-background-color: linear-gradient(#437c89, #111f22);
+}
+.menu-button {
+    -fx-text-fill: beige;
+    -fx-border-width: 1;
+    -fx-font-size: 10 pt;
+}
+.menu{
+    -fx-background-color: linear-gradient(#437c89, #111f22);
+}
+.menu-button .label {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-font-size: 15 pt;}
+
+.menu:hover {
+    -fx-background-color: #437c89;
+}
+.menu-item{
+    -fx-background-color: linear-gradient(#437c89, #111f22);
+}
+.menu-item:hover{
+    -fx-background-color: #437c89;
+}
+.menu-item .label{
+    -fx-font-size: 15 pt;
+    -fx-label-line-length: 8;
 }

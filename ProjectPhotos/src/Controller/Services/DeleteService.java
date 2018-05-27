@@ -25,8 +25,16 @@ public class DeleteService extends TransactionHandler {
             if(photoRepo.findByAlbum(album, con).size() <= 1)
             {
                 albumRepo.dbDeleteAlbumByName(album,con);
+                System.out.println("del "+ album);
             }
+            System.out.println("ok");
         }
+
+        DBConnector connector = new DBConnector();
+        connector.databaseConnect();
+        con.setSession(con.getFactory().getCurrentSession());
+        con.getSession().beginTransaction();
         photoRepo.dbDeletePhoto(photo,con);
+        connector.databaseDisconnect();
     }
 }

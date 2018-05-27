@@ -17,7 +17,7 @@
    <center>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <AnchorPane fx:id="loginPane" layoutX="365.0" layoutY="28.0" prefHeight="345.0" prefWidth="211.0">
+            <AnchorPane fx:id="loginPane" layoutX="210.0" layoutY="28.0" prefHeight="313.0" prefWidth="198.0">
                <children>
                   <Button layoutX="52.0" layoutY="253.0" mnemonicParsing="false" onAction="#openSignUpForm" prefHeight="29.0" prefWidth="91.0" text="Sign Up">
                      <font>
@@ -50,12 +50,12 @@
                   <Blend />
                </effect>
             </AnchorPane>
-            <Label fx:id="tuxedoViewLabel" layoutX="107.0" layoutY="151.0" prefHeight="49.0" prefWidth="163.0" text="Tuxedo View">
+            <Label fx:id="tuxedoViewLabel" layoutX="14.0" layoutY="1.0" prefHeight="54.0" prefWidth="233.0" text="Tuxedo View">
                <font>
                   <Font name="Gentium Book Basic Bold" size="26.0" />
                </font>
             </Label>
-            <Label fx:id="tuxedoViewDescription" layoutX="38.0" layoutY="185.0" prefHeight="30.0" prefWidth="293.0" text="All your photos are backed up safely.">
+            <Label fx:id="tuxedoViewDescription" layoutX="131.0" layoutY="350.0" prefHeight="30.0" prefWidth="340.0" text="All your photos are backed up safely.">
                <font>
                   <Font name="Gentium Basic" size="18.0" />
                </font>
