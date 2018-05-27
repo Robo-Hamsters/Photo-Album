@@ -9,6 +9,6 @@
    <children>
       <TextField fx:id="textAlbumName" layoutX="79.0" layoutY="60.0" promptText="Album name" />
       <Button layoutX="110.0" layoutY="121.0" mnemonicParsing="false" onAction="#createAlbum" text="Create album" />
-      <Label layoutX="77.0" layoutY="31.0" text="Insert album name:" />
+      <Label layoutX="77.0" layoutY="31.0" text="Insert album name:" textFill="WHITE" />
    </children>
 </AnchorPane>
