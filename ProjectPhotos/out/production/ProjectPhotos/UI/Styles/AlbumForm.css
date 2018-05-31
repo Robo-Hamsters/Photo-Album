@@ -1,30 +1,33 @@
 .root {
-    -fx-background-image:url("bef95d5a-cb7e-4c3a-9936-b1dbe62c25d8.jpg") ;
+    -fx-background-image:url("img/camera.jpg");
+    -fx-background-size: cover;
 }
 
-.button,
-.list-view,
-.list-cell {
+.button {
     -fx-text-fill: #fff;
-    -fx-font-family: "Arial Narrow";
+    -fx-font-family: "sans-serif";
     -fx-font-size: 13px;
     -fx-font-weight: bold;
     -fx-background-color: linear-gradient(#437c89, #111f22);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 
-.button:hover,
-.list-cell:hover{
+.button:hover {
     -fx-background-color: #61a2b1;
     -fx-border-color:#2a5058;
     -fx-border-radius: 0px;
     -fx-border-width: 0px 0px 0px 2px;
 }
 
-
 .label {
+    -fx-text-fill: #000;
+    -fx-font-size: 16px;
+}
+
+#labelUsername {
     -fx-text-fill: #fff;
-    -fx-font-size: 25px;
+    -fx-font-size: 18px;
+    -fx-font-family: sans-serif;
 }
 
 #btn_upload,
@@ -32,32 +35,25 @@
     -fx-font-size: 20px;
     -fx-background-radius: 50px;
 }
-.menu-bar{
-    -fx-background-color: linear-gradient(#437c89, #111f22);
-}
-.menu-button {
-    -fx-text-fill: beige;
-    -fx-border-width: 1;
-    -fx-font-size: 10 pt;
-}
-.menu{
-    -fx-background-color: linear-gradient(#437c89, #111f22);
-}
-.menu-button .label {
-    -fx-background-color: transparent;
-    -fx-text-fill: black;
-    -fx-font-size: 15 pt;}
 
-.menu:hover {
-    -fx-background-color: #437c89;
-}
-.menu-item{
+.menu {
     -fx-background-color: linear-gradient(#437c89, #111f22);
 }
-.menu-item:hover{
-    -fx-background-color: #437c89;
+
+.menu-bar {
+    -fx-background-color: linear-gradient(#437c89, #111f22);
 }
-.menu-item .label{
-    -fx-font-size: 15 pt;
-    -fx-label-line-length: 8;
+
+
+.menu-item {
+    -fx-text-fill: #000;
 }
+
+.menu-item:focused {
+    -fx-background-color: #61a2b1;
+    -fx-border-color:#2a5058;
+    -fx-border-radius: 0px;
+    -fx-border-width: 0px 0px 0px 2px;
+    -fx-text-fill: white;
+}
+
