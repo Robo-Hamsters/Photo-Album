@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -9,66 +8,50 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="357.0" prefWidth="592.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
-   <center>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+   <children>
+      <AnchorPane fx:id="loginPane" layoutX="364.0" layoutY="54.0" prefHeight="293.0" prefWidth="211.0">
          <children>
-            <AnchorPane fx:id="loginPane" layoutX="210.0" layoutY="28.0" prefHeight="313.0" prefWidth="198.0">
-               <children>
-                  <Button layoutX="52.0" layoutY="253.0" mnemonicParsing="false" onAction="#openSignUpForm" prefHeight="29.0" prefWidth="91.0" text="Sign Up">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Button>
-                  <Label fx:id="loginLabel" layoutX="42.0" layoutY="29.0" prefHeight="36.0" prefWidth="111.0" text="Login" textFill="#aeaeae">
-                     <font>
-                        <Font name="KacstArt" size="33.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="textLoginEmail" layoutX="10.0" layoutY="87.0" promptText="Email">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <PasswordField fx:id="textLoginPswd" layoutX="12.0" layoutY="130.0" promptText="Password">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </PasswordField>
-                  <Hyperlink fx:id="forgotP" layoutX="14.0" layoutY="161.0" onAction="#forgotPass" text="Forgot your password?" underline="true" />
-                  <Button fx:id="btnSignIn" defaultButton="true" layoutX="52.0" layoutY="215.0" mnemonicParsing="false" onAction="#signIn" prefHeight="29.0" prefWidth="91.0" text="Log In">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Button>
-               </children>
-               <effect>
-                  <Blend />
-               </effect>
-            </AnchorPane>
-            <Label fx:id="tuxedoViewLabel" layoutX="14.0" layoutY="1.0" prefHeight="54.0" prefWidth="233.0" text="Tuxedo View">
+            <Label fx:id="loginLabel" layoutX="33.0" layoutY="20.0" prefHeight="36.0" prefWidth="111.0" text="Login" textFill="#aeaeae">
                <font>
-                  <Font name="Gentium Book Basic Bold" size="26.0" />
+                  <Font name="KacstArt" size="33.0" />
                </font>
             </Label>
-            <Label fx:id="tuxedoViewDescription" layoutX="131.0" layoutY="350.0" prefHeight="30.0" prefWidth="340.0" text="All your photos are backed up safely.">
+            <TextField fx:id="textLoginEmail" layoutX="27.0" layoutY="78.0" prefHeight="23.0" prefWidth="156.0" promptText="Email">
                <font>
-                  <Font name="Gentium Basic" size="18.0" />
+                  <Font size="14.0" />
+               </font></TextField>
+            <PasswordField fx:id="textLoginPswd" layoutX="28.0" layoutY="117.0" prefHeight="23.0" prefWidth="156.0" promptText="Password">
+               <font>
+                  <Font size="14.0" />
+               </font></PasswordField>
+            <Hyperlink fx:id="forgotP" layoutX="23.0" layoutY="147.0" onAction="#forgotPass" text="Forgot your password?" underline="true" />
+            <Button fx:id="btnSignIn" layoutX="55.0" layoutY="199.0" mnemonicParsing="false" onAction="#signIn" prefHeight="29.0" prefWidth="101.0" text="Log In">
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+            <Button layoutX="55.0" layoutY="236.0" mnemonicParsing="false" onAction="#openSignUpForm" prefHeight="29.0" prefWidth="101.0" text="Sign Up">
+               <font>
+                  <Font size="13.0" />
                </font>
-            </Label>
-            <ProgressIndicator fx:id="progressIndicator" layoutX="146.0" layoutY="256.0" prefHeight="49.0" prefWidth="77.0" visible="false" />
+            </Button>
          </children>
+         <effect>
+            <Blend />
+         </effect>
       </AnchorPane>
-   </center>
-   <top>
-      <HBox BorderPane.alignment="CENTER">
-         <padding>
-            <Insets top="5.0" />
-         </padding>
-      </HBox>
-   </top>
-</BorderPane>
+      <Label fx:id="tuxedoViewLabel" layoutX="46.0" layoutY="315.0" prefHeight="49.0" prefWidth="225.0" text="Tuxedo View">
+         <font>
+            <Font name="Gentium Book Basic Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="tuxedoViewDescription" layoutX="14.0" layoutY="349.0" prefHeight="30.0" prefWidth="372.0" text="All your photos are backed up safely.">
+         <font>
+            <Font name="Gentium Basic" size="18.0" />
+         </font>
+      </Label>
+      <ProgressIndicator fx:id="progressIndicator" layoutX="146.0" layoutY="256.0" prefHeight="49.0" prefWidth="77.0" visible="false" />
+   </children>
+</AnchorPane>

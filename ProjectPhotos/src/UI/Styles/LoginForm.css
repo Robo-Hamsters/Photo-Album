@@ -1,5 +1,6 @@
 .root {
-    -fx-background-image:url("bef95d5a-cb7e-4c3a-9936-b1dbe62c25d8.jpg") ;
+    -fx-background-image: url("img/camera.jpg");
+    -fx-background-size: cover;
 }
 
 .button {
@@ -8,7 +9,7 @@
     -fx-font-family: "Arial Narrow";
     -fx-font-size: 13px;
     -fx-font-weight: bold;
-    -fx-background-color:transparent;
+    -fx-background-color: linear-gradient(#437c89, #111f22);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 
@@ -17,8 +18,10 @@
 }
 
 .text-field {
-    -fx-background-color: #000c18;
-    -fx-text-fill: #fff;
+    -fx-background-color: #fff;
+    -fx-border-color: #8e8e8e;
+    -fx-border-radius: 2px;
+    -fx-text-fill: #000;
     -fx-font-size: 14px;
 }
 
@@ -28,21 +31,27 @@
 }
 
 #loginPane {
-    -fx-background-color: transparent;
+    -fx-background-color: #fff;
+    -fx-background-radius:  3px;
+    -fx-opacity: 0.82;
 }
 
 #tuxedoViewLabel {
-    -fx-text-fill: white;
+    -fx-text-fill: #000;
     -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-font-family: monospace;
 }
 
 #tuxedoViewDescription {
-    -fx-text-fill: whitez;
+    -fx-text-fill: #000;
     -fx-font-size: 17px;
+    -fx-font-family: sans-serif;
 }
 
 #loginLabel {
-    -fx-text-fill: #fff;
+    -fx-text-fill: #000;
     -fx-font-size: 33px;
+    -fx-font-family: sans-serif;
 }
 

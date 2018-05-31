@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AboutController">
+   <children>
+      <Label layoutX="271.0" layoutY="26.0" text="About us" />
+      <TextArea editable="false" layoutX="83.0" layoutY="54.0" prefHeight="66.0" prefWidth="435.0" text="We are a team of Junior Software Engineers and we are trying to do our best to pass the lab of &quot;Methology of Programming&quot;" wrapText="true" />
+      <ImageView fx:id="imgTasos" fitHeight="121.0" fitWidth="125.0" layoutX="69.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/tasos.jpg" />
+         </image></ImageView>
+      <ImageView fitHeight="121.0" fitWidth="125.0" layoutX="386.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/zegos.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="121.0" fitWidth="125.0" layoutX="69.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/pavlina.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="121.0" fitWidth="125.0" layoutX="373.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
