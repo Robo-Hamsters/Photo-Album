@@ -1,42 +1,42 @@
 package Controller.Services;
 
-import javafx.scene.control.TextField;
+
 
 public class ValidationService {
 
     private String message="";
 
-    public boolean checkIfPasswordsMatch(TextField pass , TextField conPass){
+    public boolean checkIfPasswordsMatch(String pass , String conPass){
         boolean match = false;
-        if(pass.getText().equals(conPass.getText())) match = true;
+        if(pass.equals(conPass)) match = true;
         return match;
     }
 
-    public boolean checkIfPasswordIsStrong(TextField pass){
+    public boolean checkIfPasswordIsStrong(String pass){
         boolean strongPass = false;
-        if(pass.getText().length() >= 6) strongPass = true;
+        if(pass.length() >= 6) strongPass = true;
         return strongPass;
     }
 
-    public boolean checkIfPasswordIsNull(TextField pass){
+    public boolean checkIfPasswordIsNull(String pass){
         boolean nullPass = false;
-        if(pass.getText().isEmpty()) nullPass = true;
+        if(pass.isEmpty()) nullPass = true;
         return  nullPass;
     }
 
-    public boolean checkIfUserNameIsNull(TextField name){
+    public boolean checkIfUserNameIsNull(String name){
         boolean nullName = false;
-        if(name.getText().isEmpty()) nullName = true;
+        if(name.isEmpty()) nullName = true;
         return  nullName;
     }
 
-    public boolean checkIfEmailIsValid(TextField email){
+    public boolean checkIfEmailIsValid(String email){
         boolean validEmail = false;
-        if(email.getText().contains("@")) validEmail = true;
+        if(email.contains("@")) validEmail = true;
         return  validEmail;
     }
 
-    public boolean checkValidation(TextField textName, TextField textEmail, TextField textPassword, TextField textConPassword){
+    public boolean checkValidation(String textName, String textEmail, String textPassword,String textConPassword){
         boolean allClear = true;
         int passCode = 0;
         int matchCode = 0;
@@ -73,6 +73,7 @@ public class ValidationService {
 
         return allClear;
     }
+
 
     public String checkWarningStatus(String alert){
         message+=alert+"\n";

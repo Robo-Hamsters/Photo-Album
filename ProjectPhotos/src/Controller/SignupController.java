@@ -32,7 +32,7 @@ public class SignupController  {
     @FXML
     public void createAccount(ActionEvent event)
     {
-        if(service.checkValidation(textName, textEmail, textPassword, textConPassword))
+        if(service.checkValidation(textName.getText(), textEmail.getText(), textPassword.getText(), textConPassword.getText()))
         {
             user=new User(UUID.randomUUID(), textName.getText(), textEmail.getText(), EncryptService.encryptPassword(textPassword.getText()));
 

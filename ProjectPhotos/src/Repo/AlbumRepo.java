@@ -43,11 +43,12 @@ public class AlbumRepo {
         return returnAlbums;
     }
 
-    public Album findByName(Album album,DBConnector con)
+    public Album findByNameAndUser(Album album, DBConnector con)
     {
 
-        Query query= con.getSession().createQuery("from Album a inner join User u on a.user.userid = u.userid where a.albumName = :frmname");
+        Query query= con.getSession().createQuery("from Album a inner join User u on a.user.userid = u.userid where u.userid = :frmUID and a.albumName = :frmname");
         query.setParameter("frmname",album.getAlbumName());
+        query.setParameter("frmUID",album.getUser().getUserid());
 
         List<Object[]> list=query.list();
         Album returnAlbum = null;

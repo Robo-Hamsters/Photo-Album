@@ -53,7 +53,7 @@ public class ImageUploadService extends TransactionHandler {
     public void task(DBConnector con) {
 
         AlbumRepo albumRepo = new AlbumRepo();
-        album=albumRepo.findByName(album,con);
+        album=albumRepo.findByNameAndUser(album,con);
 
     }
 }
