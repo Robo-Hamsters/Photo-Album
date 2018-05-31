@@ -2,7 +2,6 @@ package Controller.Services;
 
 import Controller.NewAlbumController;
 import Model.Album;
-import Model.User;
 import Repo.AlbumRepo;
 import Repo.DBConnector;
 import javafx.scene.control.Alert;
@@ -75,7 +74,7 @@ public class NewAlbumService extends TransactionHandler{
     @Override
     public void task(DBConnector con) {
         AlbumRepo albumRepo = new AlbumRepo();
-        returnAlbum = albumRepo.findByName(album,con);
+        returnAlbum = albumRepo.findByNameAndUser(album,con);
 
         if(returnAlbum == null)
         {
