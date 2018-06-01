@@ -71,8 +71,8 @@ public class ImageUploadController {
     }
 
     @FXML
-    private void imageUpload(ActionEvent event) throws IOException {
-
+    private void imageUpload(ActionEvent event) throws IOException
+    {
             Album returnAlbum = null;
             ImageUploadService service = new ImageUploadService();
             if(albumComboBox.getValue() != null) {
@@ -100,9 +100,6 @@ public class ImageUploadController {
 
         stage.close();
     }
-
-
-
 
 
     public void setUser(User user) { this.user = user; }

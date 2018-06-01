@@ -12,8 +12,13 @@
 
 <AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
    <children>
-      <AnchorPane fx:id="loginPane" layoutX="364.0" layoutY="54.0" prefHeight="293.0" prefWidth="211.0">
+      <AnchorPane fx:id="loginPane" layoutX="364.0" layoutY="54.0" prefHeight="299.0" prefWidth="211.0">
          <children>
+            <Button layoutX="55.0" layoutY="236.0" mnemonicParsing="false" onAction="#openSignUpForm" prefHeight="29.0" prefWidth="101.0" text="Sign Up">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
             <Label fx:id="loginLabel" layoutX="33.0" layoutY="20.0" prefHeight="36.0" prefWidth="111.0" text="Login" textFill="#aeaeae">
                <font>
                   <Font name="KacstArt" size="33.0" />
@@ -32,11 +37,6 @@
                <font>
                   <Font size="13.0" />
                </font></Button>
-            <Button layoutX="55.0" layoutY="236.0" mnemonicParsing="false" onAction="#openSignUpForm" prefHeight="29.0" prefWidth="101.0" text="Sign Up">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
          </children>
          <effect>
             <Blend />

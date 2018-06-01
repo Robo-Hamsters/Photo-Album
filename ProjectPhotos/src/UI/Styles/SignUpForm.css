@@ -1,5 +1,6 @@
 .root {
-    -fx-background-image:url("bef95d5a-cb7e-4c3a-9936-b1dbe62c25d8.jpg") ;
+    -fx-background-image:url("img/cat.jpg");
+    -fx-background-size: cover;
 }
 
 .button {
@@ -8,7 +9,7 @@
     -fx-font-family: "Arial Narrow";
     -fx-font-size: 13px;
     -fx-font-weight: bold;
-    -fx-background-color: transparent;
+    -fx-background-color: linear-gradient(#437c89, #111f22);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 
@@ -16,20 +17,19 @@
     -fx-background-color: linear-gradient(#2a5058, #61a2b1);
 }
 
-.text-field {
-    -fx-background-color: #000c18;
-    -fx-text-fill: #fff;
-    -fx-font-size: 14px;
-}
-
+.text-field,
 .password-field {
-    -fx-background-color: #000c18;
-    -fx-text-fill: #fff;
+    -fx-background-color: #fff;
+    -fx-border-color: #8e8e8e;
+    -fx-border-radius: 2px;
+    -fx-text-fill: #000;
     -fx-font-size: 14px;
 }
 
 #signUpPane {
-    -fx-background-color: transparent;
+    -fx-background-color: #fff;
+    -fx-background-radius:  3px;
+    -fx-opacity: 0.82;
 }
 
 #joinUsNowLabel {

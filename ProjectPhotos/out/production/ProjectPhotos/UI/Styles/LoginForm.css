@@ -25,6 +25,10 @@
     -fx-font-size: 14px;
 }
 
+.check-box {
+    -fx-text-fill: #000;
+}
+
 .hyperlink {
     -fx-text-fill: #52909e;
     -fx-font-size: 12px;

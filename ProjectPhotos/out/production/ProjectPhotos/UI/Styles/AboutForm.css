@@ -1,10 +1,34 @@
-.root{
-    -fx-background-image:url("bef95d5a-cb7e-4c3a-9936-b1dbe62c25d8.jpg");
+.root {
+    -fx-background-color: linear-gradient(#437c89, #111f22);
 }
-.text-area{
-    -fx-background-image: url("bef95d5a-cb7e-4c3a-9936-b1dbe62c25d8.jpg");
+.text-area {
+    -fx-text-fill: #000;
+    -fx-font-size: 18px;
+    -fx-font-family: sans-serif;
 }
-.label{
-    -fx-text-fill: white;
-    -fx-font-size: 25px;
+
+.label {
+    -fx-text-fill: #000;
+    -fx-font-size: 26px;
+    -fx-font-family: monospace;
+}
+
+#imgPavlina {
+    -fx-background-image: url("img/pavlina.jpg");
+    -fx-background-size: cover;
+}
+
+#imgTashs {
+    -fx-background-image: url("img/tashs.jpg");
+    -fx-background-size: cover;
+}
+
+#imgLioxas {
+    -fx-background-image: url("img/lioxas.jpg");
+    -fx-background-size: cover;
+}
+
+#imgThomas {
+    -fx-background-image: url("img/thomas.jpg");
+    -fx-background-size: cover;
 }

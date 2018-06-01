@@ -4,7 +4,7 @@
 }
 
 .button {
-    -fx-text-fill: #fff;
+    -fx-text-fill: #000;
     -fx-font-family: "sans-serif";
     -fx-font-size: 13px;
     -fx-font-weight: bold;
@@ -12,8 +12,9 @@
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 
-.button:hover {
-    -fx-background-color: #61a2b1;
+.button:hover,
+.list-cell:hover {
+    -fx-background-color: linear-gradient(#2a5058, #61a2b1);
     -fx-border-color:#2a5058;
     -fx-border-radius: 0px;
     -fx-border-width: 0px 0px 0px 2px;

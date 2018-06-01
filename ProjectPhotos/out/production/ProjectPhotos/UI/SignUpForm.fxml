@@ -1,62 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="427.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
+<AnchorPane prefHeight="427.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
    <children>
-      <AnchorPane fx:id="signUpPane" layoutX="53.0" layoutY="55.0" prefHeight="318.0" prefWidth="292.0">
+      <AnchorPane fx:id="signUpPane" layoutX="57.0" layoutY="55.0" prefHeight="333.0" prefWidth="285.0">
          <children>
-            <Button layoutX="87.0" layoutY="292.0" mnemonicParsing="false" onAction="#createAccount" text="Create account" textFill="#9a9a9a" />
-            <TextField fx:id="textName" layoutX="51.0" layoutY="47.0" prefHeight="29.0" prefWidth="178.0" promptText="Name">
+            <Button layoutX="92.0" layoutY="265.0" mnemonicParsing="false" onAction="#createAccount" text="Create account" textFill="#9a9a9a" />
+            <TextField fx:id="textName" layoutX="52.0" layoutY="41.0" prefHeight="29.0" prefWidth="178.0" promptText="Name">
                <font>
                   <Font size="13.0" />
                </font>
             </TextField>
-            <TextField fx:id="textEmail" layoutX="51.0" layoutY="87.0" prefHeight="29.0" prefWidth="178.0" promptText="Email">
+            <TextField fx:id="textEmail" layoutX="52.0" layoutY="81.0" prefHeight="29.0" prefWidth="178.0" promptText="Email">
                <font>
                   <Font size="13.0" />
                </font></TextField>
-            <PasswordField fx:id="textPassword" layoutX="50.0" layoutY="126.0" prefHeight="29.0" prefWidth="178.0" promptText="Password">
+            <PasswordField fx:id="textPassword" layoutX="51.0" layoutY="120.0" prefHeight="29.0" prefWidth="178.0" promptText="Password">
                <font>
                   <Font size="13.0" />
                </font></PasswordField>
-            <PasswordField fx:id="textConPassword" layoutX="51.0" layoutY="168.0" prefHeight="29.0" prefWidth="178.0" promptText="Confirm Password">
+            <PasswordField fx:id="textConPassword" layoutX="52.0" layoutY="162.0" prefHeight="29.0" prefWidth="178.0" promptText="Confirm Password">
                <font>
                   <Font size="13.0" />
                </font></PasswordField>
-            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="17.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Images/Lock1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="23.0" fitWidth="29.0" layoutX="17.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Images/Lock2.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="29.0" fitWidth="41.0" layoutX="14.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Images/Email.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="23.0" fitWidth="29.0" focusTraversable="true" layoutX="17.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-               <image>
-                  <Image url="@../../../Images/Profile_Name.png" />
-               </image>
-               <effect>
-                  <Glow />
-               </effect>
-            </ImageView>
-            <CheckBox layoutX="48.0" layoutY="194.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="185.0" text="By clicking Sign Up, you agree to our Terms. Learn how we collect, use and share your data in our Data Policy " textFill="WHITE" wrapText="true" />
+            <CheckBox layoutX="50.0" layoutY="199.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="185.0" text="By clicking Sign Up, you agree to our terms and conditions" wrapText="true" />
          </children>
       </AnchorPane>
       <Label fx:id="joinUsNowLabel" layoutX="127.0" layoutY="14.0" prefHeight="35.0" prefWidth="144.0" text="Join us now!" textFill="#b2b2b2" wrapText="true">

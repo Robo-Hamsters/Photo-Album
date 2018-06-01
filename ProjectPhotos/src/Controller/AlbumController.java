@@ -32,6 +32,7 @@ public class AlbumController {
     private Button delete_btn;
     @FXML
     private MenuBar myMenuBar;
+
     private Album album;
     private User user;
     private List<Photo> photos = new ArrayList<>();
@@ -117,7 +118,7 @@ public class AlbumController {
     }
 
     @FXML
-    public  void deleteAlbum(ActionEvent event )
+    public void deleteAlbum(ActionEvent event) throws IOException
     {
         DeleteAlbumService service = new DeleteAlbumService();
         service.deteleItem(album);
@@ -133,7 +134,8 @@ public class AlbumController {
     }
 
     @FXML
-    public void signOut(ActionEvent event) throws IOException {
+    public void signOut(ActionEvent event) throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../UI/LoginForm.fxml"));
         Parent signin = loader.load();
@@ -145,10 +147,11 @@ public class AlbumController {
         Stage stageCurrent = (Stage) myMenuBar.getScene().getWindow();
         stageCurrent.close();
         stage.show();
-
     }
+
     @FXML
-    public void settings(ActionEvent event) throws IOException {
+    public void settings(ActionEvent event) throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../UI/SettingsForm.fxml"));
         Parent settings = loader.load();
@@ -162,8 +165,10 @@ public class AlbumController {
         loader.setController(controller);
         stage.show();
     }
+
     @FXML
-    public void about(ActionEvent event) throws IOException {
+    public void about(ActionEvent event) throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../UI/AboutForm.fxml"));
         Parent settings = loader.load();
@@ -173,7 +178,6 @@ public class AlbumController {
         settings.getStylesheets().add(SignupController.class.getResource("../UI/Styles/AboutForm.css").toExternalForm());
         stage.setResizable(false);
         stage.show();
-
     }
 
     public void setLabelTextUsername(String Username) {
