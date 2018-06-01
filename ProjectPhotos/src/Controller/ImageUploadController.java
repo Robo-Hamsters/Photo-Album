@@ -76,7 +76,7 @@ public class ImageUploadController {
             Album returnAlbum = null;
             ImageUploadService service = new ImageUploadService();
             if(albumComboBox.getValue() != null) {
-                returnAlbum = service.chooseFromCombo(new Album(albumComboBox.getValue()));
+                returnAlbum = service.chooseFromCombo(new Album(albumComboBox.getValue()),user);
                 returnAlbum.setUser(user);
             }
 

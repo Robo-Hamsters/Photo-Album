@@ -14,13 +14,17 @@ public class ImageUploadService extends TransactionHandler {
 
     private Album album;
 
+    private  User user;
+
     private List<SmartAlbumCreator> albumCreators = new ArrayList<>();
 
     private NewAlbumService newAlbumService = new NewAlbumService();
 
-    public Album chooseFromCombo(Album album)
+    public Album chooseFromCombo(Album album, User user)
     {
+
         this.album = album;
+        this.album.setUser(user);
         createTransaction();
         return this.album;
     }
@@ -30,6 +34,7 @@ public class ImageUploadService extends TransactionHandler {
     }
     public List<Album> createAlbumsFromMetadata(Photo photo, User user)
     {
+
         List<String> albumNames = new ArrayList<>();
         List<Album> albums = new ArrayList<>();
         for (SmartAlbumCreator creator: albumCreators) {
